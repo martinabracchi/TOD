@@ -151,6 +151,15 @@ font-family: myFirstFont;
   bottom: 4vw;
 }
 
+#pictoric{
+  height: 50vh;
+  width: 50vh;
+  position: absolute;
+  z-index: 30;
+  left: 40vw;
+  bottom: 20vh;
+}
+
 #click1{
   display: block;
   height: 14vh;

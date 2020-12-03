@@ -66,6 +66,11 @@ console.log(latestData)
   yoff += 0.005;
   endShape();
 
+
+  if(frameCount>300){
+  document.getElementById("picto4").style.display = "none"
+}
+
 }
 
 
