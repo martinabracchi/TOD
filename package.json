@@ -12,5 +12,14 @@
   "dependencies": {
     "serialport": "^9.0.2",
     "socket.io": "^2.3.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinabracchi/TOD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martinabracchi/TOD/issues"
+  },
+  "homepage": "https://github.com/martinabracchi/TOD#readme"
 }
