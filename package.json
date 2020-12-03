@@ -1,0 +1,16 @@
+{
+  "name": "tut-node-arduino",
+  "version": "1.0.0",
+  "description": "code for the tutorial on making Arduino talk to a webpage with Node.js. Inspired by examples from GianlucaGuarini and geekmomprojects",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Michele Invernizzi",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "serialport": "^9.0.2",
+    "socket.io": "^2.3.0"
+  }
+}
