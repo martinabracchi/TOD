@@ -1,9 +1,9 @@
 @font-face {
   font-family: myFirstFont;
-  src: url(./assets/whyteBook.otf);
+  src: url(./assets/Whyte-Book.ttf);
 }
 
-#myCanvas{
+#myCanvas {
   width: 100vw;
   height: 100vh;
   border: 1px black solid;
@@ -11,22 +11,18 @@
   /* background: transparent; */
   position: absolute;
   z-index: -10;
-
 }
 
-#canvasBlob{
+#canvasBlob {
   width: 100vw;
   height: 100vh;
   border: 10px black solid;
   position: absolute;
-  z-index:10;
+  z-index: 10;
   filter: blur(40px);
--webkit-filter: blur(40px);
-
-  right:0
-
+  -webkit-filter: blur(40px);
+  right: 0
 }
-
 
 #nome {
   color: #ffffff;
@@ -40,13 +36,12 @@
   margin-inline-end: 0px; */
   left: 2vw;
   top: 1vw;
-font-family: myFirstFont;
-
+  font-family: myFirstFont;
 }
 
 #data {
   color: #ffffff;
-  z-index: 10;
+  z-index: 50;
   display: block;
   font-size: 3vh;
   margin-block-start: 0.67em;
@@ -55,14 +50,13 @@ font-family: myFirstFont;
   margin-inline-end: 0px;
   position: absolute;
   right: 2vw;
-  top:1vw;
-font-family: myFirstFont;
+  top: 1vw;
+  font-family: myFirstFont;
 }
-
 
 #posizione {
   color: #ffffff;
-  z-index: 10;
+  z-index: 50;
   display: block;
   font-size: 3vh;
   margin-block-start: 0.67em;
@@ -71,14 +65,13 @@ font-family: myFirstFont;
   margin-inline-end: 0px;
   position: absolute;
   right: 2vw;
-  bottom:1vw;
-font-family: myFirstFont;
+  bottom: 1vw;
+  font-family: myFirstFont;
 }
-
 
 #home {
   color: #ffffff;
-  z-index: 10;
+  z-index: 50;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -88,13 +81,12 @@ font-family: myFirstFont;
   font-family: myFirstFont;
   position: absolute;
   left: 2vw;
-  bottom:1vw;
-
+  bottom: 1vw;
 }
 
 #nucleo {
   color: #ffffff;
-  z-index: 10;
+  z-index: 50;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -103,7 +95,7 @@ font-family: myFirstFont;
   margin-inline-end: 0px;
   position: absolute;
   left: 8vw;
-  bottom:1vw;
+  bottom: 1vw;
   font-family: myFirstFont;
 }
 
@@ -118,22 +110,38 @@ font-family: myFirstFont;
   margin-inline-end: 0px;
   position: absolute;
   left: 14vw;
-  bottom:1vw;
+  bottom: 1vw;
   font-family: myFirstFont;
-
 }
 
+#istruzione {
+  color: #ffffff;
+  z-index: 50;
+  display: block;
+  font-size: 6vh;
+  /* text-align: center; */
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  position: absolute;
+  bottom: 0.5vw;
+  position: absolute;
+  left: 50%;
+  /* margin-left: -100px; */
+  font-family: myFirstFont;
+}
 
-#picto1{
+#picto1 {
   height: 8vh;
   width: 8vh;
   position: absolute;
-  z-index: 10;
+  z-index: 50;
   left: 2vw;
   bottom: 4vw;
 }
 
-#picto2{
+#picto2 {
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -142,7 +150,7 @@ font-family: myFirstFont;
   bottom: 4vw;
 }
 
-#picto3{
+#picto3 {
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -151,16 +159,26 @@ font-family: myFirstFont;
   bottom: 4vw;
 }
 
-#pictoric{
-  height: 50vh;
-  width: 50vh;
+#pictotask {
+  height: 150px;
+  width: 150px;
   position: absolute;
   z-index: 30;
-  left: 40vw;
-  bottom: 20vh;
+  left: 40%;
+  bottom: 40%;
+  /* margin-left: -50px; */
 }
 
-#click1{
+#pictoconv {
+  height: 30vh;
+  /* width: 30vh; */
+  position: absolute;
+  z-index: 30;
+  left: 50%;
+  bottom: 35vh;
+}
+
+#click1 {
   display: block;
   height: 14vh;
   width: 9vh;
@@ -168,10 +186,9 @@ font-family: myFirstFont;
   z-index: 20;
   left: 2vw;
   bottom: 3vh;
-
 }
 
-#click2{
+#click2 {
   display: block;
   height: 14vh;
   width: 9vh;
@@ -179,10 +196,9 @@ font-family: myFirstFont;
   z-index: 20;
   left: 8vw;
   bottom: 3vh;
-
 }
 
-#click3{
+#click3 {
   display: block;
   height: 14vh;
   width: 9vh;

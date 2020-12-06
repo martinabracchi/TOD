@@ -74,6 +74,21 @@ console.log(latestData)
   console.log(latestData)
   window.open('contatto.html', '_self')
   }
+
+
+
+  gg = day() + " · ";
+  mm = month() + " · ";
+  aaaa = year();
+  if(day()<=9){
+  datagiusta = '0'+gg +mm + aaaa;
+  }
+
+else{
+    datagiusta = gg + mm + aaaa;
+  }
+
+  select('#data').html(datagiusta)
 }
 
 

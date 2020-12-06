@@ -6,13 +6,15 @@ const socket = io();
 let latestData = "waiting for data";
 
 
-function preload(){
-  ricordo = loadImage("assets/PITTOGRAMMI/VUOTI/RICORDO.png")
-}
+
 
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasBlob');
+
+  userStartAudio();
+  mic = new p5.AudioIn();
+  mic.start();
 }
 
 socket.on('sensor', (message) => {
@@ -22,13 +24,18 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
+  background(0)
 
   // background(none);
 console.log(latestData)
 
   translate(width / 2, height / 2)
+  const micLevel = mic.getLevel();
+  var d = map(micLevel, 0,1, 10,500)
+  // console.log(d)
 
-  var radius = width/7;
+  var radius = d+100;
+
 
   beginShape();
   fill(color('#ff0000'));
@@ -48,7 +55,7 @@ console.log(latestData)
 
 
   beginShape();
-  if(latestData === 4){
+  if(latestData === 4 || d>200){
     fill(color('#ff0000'));
   }
   else{
@@ -68,7 +75,10 @@ console.log(latestData)
 
 
   if(frameCount>300){
-  document.getElementById("picto4").style.display = "none"
+  document.getElementById("pictotask").style.display = "none"
+  document.getElementById("picto1").style.display = "none"
+    document.getElementById("home").style.display = "none"
+    document.getElementById("istruzione").style.display = "none"
 }
 
 }

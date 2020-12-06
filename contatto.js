@@ -23,8 +23,13 @@ socket.on('sensor', (message) => {
 
 function draw() {
 
-  // background(none);
+  background(0)
 console.log(latestData)
+const micLevel = mic.getLevel();
+var d = map(micLevel, 0,1, 0,200)
+// console.log(d)
+
+var radius = d+100;
 
   translate(width / 2, height / 2)
 
@@ -65,6 +70,14 @@ console.log(latestData)
   }
   yoff += 0.005;
   endShape();
+
+  if(frameCount>300){
+  document.getElementById("pictotask").style.display = "none"
+  document.getElementById("picto1").style.display = "none"
+    document.getElementById("home").style.display = "none"
+        document.getElementById("istruzione").style.display = "none"
+}
+
 
 }
 
