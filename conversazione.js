@@ -88,11 +88,18 @@ else{fill('red')}
   endShape();
 
   if(frameCount>300){
-  document.getElementById("pictoconv").style.display = "none"
-    document.getElementById("picto1").style.display = "none"
-      document.getElementById("home").style.display = "none"
-      document.getElementById("istruzione").style.display = "none"
+  document.getElementById("pictotask").style.display = "none"
+  document.getElementById("picto1").style.display = "none"
+  document.getElementById("home").style.display = "none"
+  document.getElementById("istruzione").style.display = "none"
+
+
+  if(latestData === 2){
+  console.log(latestData)
+  window.open('index.html', '_self')
+  }
 }
+
 
 
 }

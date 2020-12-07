@@ -59,7 +59,7 @@ console.log(latestData)
   endShape();
 
 
-
+if (frameCount>20){
   if(latestData === 11){
   console.log(latestData)
   window.open('ricordo.html', '_self')
@@ -74,7 +74,7 @@ console.log(latestData)
   console.log(latestData)
   window.open('contatto.html', '_self')
   }
-
+}
 
 
   gg = day() + " · ";
@@ -89,6 +89,8 @@ else{
   }
 
   select('#data').html(datagiusta)
+
+
 }
 
 

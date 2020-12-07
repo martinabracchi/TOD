@@ -14,17 +14,16 @@
 
 }
 
-#canvasBlob{
+#canvasFeedback{
   width: 100vw;
   height: 100vh;
   border: 10px black solid;
   position: absolute;
   z-index:10;
-  filter: blur(40px);
--webkit-filter: blur(40px);
+  filter: blur(60px);
+ -webkit-filter: blur(60px);
 
   right:0
-
 }
 
 

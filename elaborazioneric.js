@@ -4,10 +4,6 @@ const socket = io();
 
 // let serial;
 let latestData = "waiting for data";
-let timer = 0;
-let qualità = 100;
-let punteggio;
-
 
 
 
@@ -18,8 +14,6 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
-  setInterval(timerup, 1000)
-  setInterval(riduzione, 2000)
 }
 
 socket.on('sensor', (message) => {
@@ -60,13 +54,8 @@ function draw() {
 
   beginShape();
     var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
-    fill(color('#ff0000'));
-    setInterval(riduzione, 2000)
-  }
-  else{
-  fill(color('#2c2cff'));}
-  noStroke();
+  fill(color('#2c2cff'));
+  noStroke()
   var xoff = 0;
   for (var a = 0; a < TWO_PI; a += 0.1) {
     var offset = map(noise(xoff, yoff), 0, 1, -150, 100);
@@ -80,36 +69,19 @@ function draw() {
   endShape();
 
 
-  if(frameCount>300){
-  document.getElementById("pictotask").style.display = "none"
-  document.getElementById("picto1").style.display = "none"
-    document.getElementById("home").style.display = "none"
-    document.getElementById("istruzione").style.display = "none"
+  // if(frameCount>200){
+  // document.getElementById("pictotask").style.display = "none"
+  // document.getElementById("picto1").style.display = "none"
+  //   document.getElementById("home").style.display = "none"
+  //   document.getElementById("istruzione").style.display = "none"}
 
-    if(latestData === 11){
+    if(frameCount > 300){
     console.log(latestData)
-    window.open('elaborazioneric.html', '_self')
+    window.open('punteggioric.html', '_self')
     }
-}
 
-
-punteggio = timer*5 + qualità/10;
-console.log("PUNTEGGIO: " + punteggio)
 
 }
-
-function timerup(){
-  timer = timer + 1
-  console.log("SECONDI PASSATI: " + timer)
-}
-
-function riduzione(){
-  const micLevel = mic.getLevel();
-  var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
-  qualità = qualità-1}
-}
-
 
 
 

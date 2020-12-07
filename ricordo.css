@@ -119,16 +119,15 @@
   z-index: 50;
   display: block;
   font-size: 6vh;
-  /* text-align: center; */
+  text-align: center;
   margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-block-end: 0.3em;
+  /* margin-inline-start: 0px;
+  margin-inline-end: 0px; */
   position: absolute;
-  bottom: 0.5vw;
-  position: absolute;
-  left: 50%;
-  /* margin-left: -100px; */
+  bottom: 1vw;
+  left: 50vw;
+  margin-left: -200px;
   font-family: myFirstFont;
 }
 
@@ -164,19 +163,11 @@
   width: 150px;
   position: absolute;
   z-index: 30;
-  left: 40%;
+  left: 48%;
   bottom: 40%;
   /* margin-left: -50px; */
 }
 
-#pictoconv {
-  height: 30vh;
-  /* width: 30vh; */
-  position: absolute;
-  z-index: 30;
-  left: 50%;
-  bottom: 35vh;
-}
 
 #click1 {
   display: block;

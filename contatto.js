@@ -6,9 +6,7 @@ const socket = io();
 let latestData = "waiting for data";
 
 
-function preload(){
-  ricordo = loadImage("assets/PITTOGRAMMI/VUOTI/RICORDO.png")
-}
+
 
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
@@ -24,16 +22,15 @@ socket.on('sensor', (message) => {
 function draw() {
 
   background(0)
-console.log(latestData)
-const micLevel = mic.getLevel();
-var d = map(micLevel, 0,1, 0,200)
-// console.log(d)
+  console.log(latestData)
 
-var radius = d+100;
+  // console.log(d)
+
+  var radius = 100;
 
   translate(width / 2, height / 2)
 
-  var radius = width/7;
+  var radius = width / 7;
 
   beginShape();
   fill(color('#ff0000'));
@@ -53,11 +50,11 @@ var radius = d+100;
 
 
   beginShape();
-  if(latestData === 4){
+  if (latestData === 4) {
     fill(color('#ff0000'));
+  } else {
+    fill(color('#2c2cff'));
   }
-  else{
-  fill(color('#2c2cff'));}
   noStroke();
   var xoff = 0;
   for (var a = 0; a < TWO_PI; a += 0.1) {
@@ -71,12 +68,17 @@ var radius = d+100;
   yoff += 0.005;
   endShape();
 
-  if(frameCount>300){
-  document.getElementById("pictotask").style.display = "none"
-  document.getElementById("picto1").style.display = "none"
+  if (frameCount > 300) {
+    document.getElementById("pictotask").style.display = "none"
+    document.getElementById("picto1").style.display = "none"
     document.getElementById("home").style.display = "none"
-        document.getElementById("istruzione").style.display = "none"
-}
+    document.getElementById("istruzione").style.display = "none"
+
+    if (latestData === 3) {
+      console.log(latestData)
+      window.open('index.html', '_self')
+    }
+  }
 
 
 }
