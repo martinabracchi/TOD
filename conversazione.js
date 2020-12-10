@@ -14,6 +14,7 @@ function preload(){
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasBlob');
+  window.speechRec = window.SpeechReognition;
 
 speechRec = new p5.SpeechRec('IT', gotSpeech);
 let continuous = true;

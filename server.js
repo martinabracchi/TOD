@@ -79,6 +79,7 @@ io.on('connection', (socket) => {
 
     // when receiving data from Arduino, tell the client what to do accordingly
     serial.on('data', forwardMessage);
+  
 
     // log if an user disconnects
     socket.on('disconnect', () => {
@@ -92,6 +93,8 @@ io.on('connection', (socket) => {
         socket.emit('sensor', message);
         console.log(message)
     }
+
+
 });
 
 // Start the server and listen for any request on selected port

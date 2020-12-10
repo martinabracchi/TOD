@@ -1,16 +1,15 @@
 var yoff = 0.0;
 // initialize socket variable on client
 const socket = io();
+
 const url_string = window.location.href
 let url = new URL(url_string);
+let parametro = url.searchParams.get("punt");
+
 
 // let serial;
 let latestData = "waiting for data";
-let timer = 0;
-let qualità = 100;
-let punteggio;
-
-
+let punteggio = '';
 
 
 
@@ -21,8 +20,6 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
-  setInterval(timerup, 1000)
-  setInterval(riduzione, 2000)
 }
 
 socket.on('sensor', (message) => {
@@ -33,6 +30,7 @@ socket.on('sensor', (message) => {
 
 function draw() {
   background(0)
+  console.log(punteggio)
 
 // console.log(latestData)
 
@@ -63,13 +61,8 @@ function draw() {
 
   beginShape();
     var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
-    fill(color('#ff0000'));
-    setInterval(riduzione, 2000)
-  }
-  else{
-  fill(color('#2c2cff'));}
-  noStroke();
+  fill(color('#2c2cff'));
+  noStroke()
   var xoff = 0;
   for (var a = 0; a < TWO_PI; a += 0.1) {
     var offset = map(noise(xoff, yoff), 0, 1, -150, 100);
@@ -83,40 +76,32 @@ function draw() {
   endShape();
 
 
-
-
-punteggio = timer + qualità/10;
-console.log("PUNTEGGIO: " + punteggio)
-
-if(frameCount>300){
-
-document.getElementById("pictotask").style.display = "none"
-document.getElementById("picto1").style.display = "none"
-document.getElementById("home").style.display = "none"
-document.getElementById("istruzione").style.display = "none"
-
-  if(latestData === 11){
-  let punteggioric = timer + qualità/10;
-  console.log(latestData);
-  // let nuovapagina = "elaborazioneric.html";
-  window.open("/elaborazioneric.html", '_self')
+  gg = day() + " . ";
+  if(month()<9){
+ mm = '0'+ month() + " . ";
   }
-}
+  else{
+    mm = month() + " . ";
+  }
+
+  aaaa = year();
+  if(day()<=9){
+  datagiusta = '0'+gg +mm + aaaa;
+  }
+else{
+    datagiusta = gg + mm + aaaa;
+  }
+  select('#data1').html(datagiusta)
+
+    if(frameCount > 300){
+    console.log(latestData)
+    window.open('home.html', '_self')
+    }
+
+
+
 
 }
-
-function timerup(){
-  timer = timer + 1
-  console.log("SECONDI PASSATI: " + timer)
-}
-
-function riduzione(){
-  const micLevel = mic.getLevel();
-  var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
-  qualità = qualità-1}
-}
-
 
 
 

@@ -1,0 +1,73 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./assets/Whyte-Book.ttf);
+}
+
+#myCanvas {
+  width: 100vw;
+  height: 100vh;
+  border: 1px black solid;
+  background-color: #000000;
+  /* background: transparent; */
+  position: absolute;
+  z-index: -10;
+}
+
+#canvasBlob {
+  width: 100vw;
+  height: 100vh;
+  border: 10px black solid;
+  position: absolute;
+  z-index: 10;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  right: 0
+}
+
+
+
+.data {
+  width: 500px;
+  position: absolute;
+  bottom: 5%;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index: 50;
+
+}
+
+
+#data1{
+  color: #ffffff;
+  z-index: 50;
+  text-align: center;
+  position: relative;
+  right: 50%;
+  margin-bottom: 0%;
+  font-size: 4vh;
+  font-family: myFirstFont;
+}
+
+
+
+.divistru{
+  width: 500px;
+  position: absolute;
+  bottom: 50%;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index: 50;
+
+}
+
+
+#istruzione {
+  color: #ffffff;
+  z-index: 50;
+  text-align: center;
+  position: relative;
+  right: 50%;
+  margin-bottom: 0%;
+  font-size: 6vh;
+  font-family: myFirstFont;
+}

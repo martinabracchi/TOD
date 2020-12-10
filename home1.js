@@ -15,10 +15,9 @@ function setup() {
   angleMode(DEGREES);
 
 
-  er2 = new EggRing(width*0.6, height*0.5, 180, 300, color('#2c2cff'), width/40, 200);
-  // er2 = new EggRing(width*0.5, height*0.5, 0, 350);
-  er3 = new EggRing(width*0.46, height*0.65, 300, 300, color('#2c2cff'), width/40, 300);
-  er4 = new EggRing(width*0.48, height*0.3, 60, 300, color('red'), width/40, 120);
+  er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, color('#2c2cff'), width/40, 250);
+  er3 = new EggRing(width*0.49, height*0.58+100, 300, 300, color('red'), width/40, 100);
+  er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, color('red'), width/40, 100);
 }
 
 socket.on('sensor', (message) => {
@@ -52,12 +51,12 @@ console.log(latestData)
     }
 
 
-      gg = day() + " · ";
+      gg = day() + " . ";
       if(month()<9){
-     mm = '0'+ month() + " · ";
+     mm = '0'+ month() + " . ";
       }
       else{
-        mm = month() + " · ";
+        mm = month() + " . ";
       }
 
       aaaa = year();

@@ -2,8 +2,14 @@ var yoff = 0.0;
 // initialize socket variable on client
 const socket = io();
 
+const url_string = window.location.href
+let url = new URL(url_string);
+let parametro = url.searchParams.get("punt");
+
+
 // let serial;
 let latestData = "waiting for data";
+let punteggio = '';
 
 
 
@@ -24,6 +30,7 @@ socket.on('sensor', (message) => {
 
 function draw() {
   background(0)
+  console.log(punteggio)
 
 // console.log(latestData)
 
@@ -68,12 +75,6 @@ function draw() {
   yoff += 0.005;
   endShape();
 
-
-  // if(frameCount>200){
-  // document.getElementById("pictotask").style.display = "none"
-  // document.getElementById("picto1").style.display = "none"
-  //   document.getElementById("home").style.display = "none"
-  //   document.getElementById("istruzione").style.display = "none"}
 
     if(frameCount > 300){
     console.log(latestData)

@@ -6,7 +6,10 @@ const socket = io();
 
 // let serial;
 let latestData = "waiting for data";
+const urlString = window.location.href;
 
+const url = new URL(urlString);
+let punteggio = url.searchParams.get('punteggio');
 
 
 function setup() {
@@ -27,8 +30,8 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-console.log(latestData)
-
+// console.log(latestData)
+console.log(punteggio)
   er2.transmit();
   // er3.transmit();
   // er4.transmit();
