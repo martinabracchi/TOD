@@ -85,7 +85,7 @@ function draw() {
 
 
 
-punteggio = timer + qualità/10;
+punteggio = timer*10 + qualità/5;
 console.log("PUNTEGGIO: " + punteggio)
 
 if(frameCount>300){
@@ -96,10 +96,11 @@ document.getElementById("home").style.display = "none"
 document.getElementById("istruzione").style.display = "none"
 
   if(latestData === 11){
-  let punteggioric = timer + qualità/10;
+  let punteggio= timer + qualità/10;
   console.log(latestData);
   // let nuovapagina = "elaborazioneric.html";
-  window.open("/elaborazioneric.html", '_self')
+  storeItem('punteggio', punteggio)
+  window.open("elaborazioneric.html", '_self')
   }
 }
 
@@ -114,7 +115,7 @@ function riduzione(){
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0,1, 10,500)
   if(latestData === 4 || d>15){
-  qualità = qualità-1}
+  qualità = qualità-0.01}
 }
 
 

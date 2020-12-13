@@ -79,7 +79,15 @@ io.on('connection', (socket) => {
 
     // when receiving data from Arduino, tell the client what to do accordingly
     serial.on('data', forwardMessage);
-  
+
+    socket.on('saluto', (messaggio1) => {
+      console.log('mess to arduino: ' + messaggio1)
+      serial.write(`${messaggio1}\n`, function(err) {
+          if (err) {
+            return console.log('Error on write: ', err.message)
+          }
+      })
+  });
 
     // log if an user disconnects
     socket.on('disconnect', () => {
@@ -89,10 +97,14 @@ io.on('connection', (socket) => {
     });
 
     function forwardMessage(data) {
+      console.log('dato ricevuto: ' + data.toString().replace(/\n*/, ''))
         let message = +data.toString().replace(/\n*/, '');
+
         socket.emit('sensor', message);
-        console.log(message)
+
     }
+
+
 
 
 });

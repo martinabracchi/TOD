@@ -6,10 +6,7 @@ const socket = io();
 
 // let serial;
 let latestData = "waiting for data";
-const urlString = window.location.href;
 
-const url = new URL(urlString);
-let punteggio = url.searchParams.get('punteggio');
 
 
 function setup() {
@@ -31,50 +28,15 @@ socket.on('sensor', (message) => {
 
 function draw() {
 // console.log(latestData)
-console.log(punteggio)
+let risultatoricordo = getItem('punteggiovisto')
+
   er2.transmit();
-  // er3.transmit();
-  // er4.transmit();
-    // blendMode(MULTIPLY)
+  select('#risultatoricordo').html(risultatoricordo + '%')
 
-    if (frameCount>20){
-      if(latestData === 11){
-      console.log(latestData)
-      window.open('ricordo.html', '_self')
-      }
-
-      if(latestData === 2){
-      console.log(latestData)
-      window.open('conversazione.html', '_self')
-      }
-
-      if(latestData === 3){
-      console.log(latestData)
-      window.open('contatto.html', '_self')
-      }
-    }
-
-
-      gg = day() + " · ";
-      if(month()<9){
-     mm = '0'+ month() + " · ";
-      }
-      else{
-        mm = month() + " · ";
-      }
-
-      aaaa = year();
-      if(day()<=9){
-      datagiusta = '0'+gg +mm + aaaa;
-      }
-    else{
-        datagiusta = gg + mm + aaaa;
-      }
-      select('#data').html(datagiusta)
-
-      if(frameCount > '500'){
-          window.open('index.html', '_self')
-      }
+  if(frameCount > '300'){
+    window.open('home.html', '_self')
+    storeItem(risultatoricordo)
+  }
 }
 
 class Egg {

@@ -4,6 +4,7 @@ var yoff = 0.0;
 // initialize socket variable on client
 const socket = io();
 
+
 // let serial;
 let latestData = "waiting for data";
 
@@ -14,10 +15,9 @@ function setup() {
   cnv.id('canvasFeedback');
   angleMode(DEGREES);
 
-
-  er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, color('#2c2cff'), width/40, 250);
-  er3 = new EggRing(width*0.49, height*0.58+100, 300, 300, color('red'), width/40, 100);
-  er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, color('red'), width/40, 100);
+  er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, color('#2c2cff'), width/40, 180);
+  er3 = new EggRing(width*0.49, height*0.58+100, 300, 300, color('red'), width/40, 20);
+  er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, color('red'), width/40, 230);
 }
 
 socket.on('sensor', (message) => {
@@ -26,7 +26,9 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-console.log(latestData)
+
+let risultatoricordo = getItem('punteggiovisto')
+select('#risultatoricordo').html(risultatoricordo + '%')
 
   er2.transmit();
   er3.transmit();
@@ -69,6 +71,12 @@ console.log(latestData)
       select('#data').html(datagiusta)
 }
 
+function mouseClicked(){
+  messaggio1 = '4'
+      socket.emit('saluto', messaggio1);
+}
+
+
 class Egg {
   constructor(xpos, ypos, t, s, riempi, pxpos, pypos) {
     this.x = xpos;
@@ -90,11 +98,8 @@ class Egg {
     scale(this.scalar);
     beginShape();
     vertex(0, height/36);
-    // bezierVertex(25, -100, 50, -65, 50, -30);
     bezierVertex(0, height/36, this.px, this.py, width/20,height/36);
-    vertex(width/40, 0)
-    // bezierVertex(-25, 10, -40, -15, -50, -30);
-    // bezierVertex(-50, -65, -25, -100, 0, -100);
+    vertex(width/40, 0);
     endShape();
     pop();
   }
@@ -111,20 +116,12 @@ class EggRing {
     this.px = px;
     this.py = py;
     this.ovoid = new Egg(this.x, this.y, this.t, this.sp, this.riempi, this.px, this.py);
-
-
   }
 
   transmit() {
-
     this.ovoid.display();
-
   }
-
-
-
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

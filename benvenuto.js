@@ -9,7 +9,6 @@ let parametro = url.searchParams.get("punt");
 
 // let serial;
 let latestData = "waiting for data";
-let punteggio = '';
 
 
 
@@ -30,7 +29,7 @@ socket.on('sensor', (message) => {
 
 function draw() {
   background(0)
-  console.log(punteggio)
+
 
 // console.log(latestData)
 

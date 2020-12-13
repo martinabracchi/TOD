@@ -4,12 +4,12 @@ const socket = io();
 
 const url_string = window.location.href
 let url = new URL(url_string);
-let parametro = url.searchParams.get("punt");
+
 
 
 // let serial;
 let latestData = "waiting for data";
-let punteggio = '';
+
 
 
 
@@ -20,6 +20,8 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
+
+
 }
 
 socket.on('sensor', (message) => {
@@ -29,8 +31,9 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
+  let punteggionuovo = getItem('punteggio');
   background(0)
-  console.log(punteggio)
+  console.log(punteggionuovo)
 
 // console.log(latestData)
 
@@ -78,6 +81,7 @@ function draw() {
 
     if(frameCount > 300){
     console.log(latestData)
+    storeItem('punteggiovisto' ,punteggionuovo)
     window.open('punteggioric.html', '_self')
     }
 

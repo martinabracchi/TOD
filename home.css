@@ -21,7 +21,7 @@
   position: absolute;
   z-index:10;
   filter: blur(60px);
- -webkit-filter: blur(60px);
+  -webkit-filter: blur(60px);
   right:0
 }
 
@@ -148,6 +148,19 @@ font-family: myFirstFont;
   bottom: 4vw;
 }
 
+
+.grafico{
+  position: absolute;
+  display:block;
+  left: 50%;
+  top: 15%;
+  margin-left: -344px;
+  height: 800px;
+  width: 840px;
+  z-index: 80;
+}
+
+
 #click1{
   display: block;
   height: 14vh;
@@ -164,7 +177,7 @@ font-family: myFirstFont;
   height: 14vh;
   width: 9vh;
   position: absolute;
-  z-index: 20;
+  z-index: 70;
   left: 8vw;
   bottom: 3vh;
 
@@ -178,4 +191,37 @@ font-family: myFirstFont;
   z-index: 20;
   left: 14vw;
   bottom: 3vh;
+}
+
+#risultatoricordo{
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right: 47.5%;
+  top:6%;
+  font-family: myFirstFont;
+}
+
+#risultatocontatto{
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right: 66.5%;
+  top:72%;
+  font-family: myFirstFont;
+}
+
+#risultatoconversazione{
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right: 28.5%;
+  top:72%;
+  font-family: myFirstFont;
 }
