@@ -6,8 +6,8 @@ const socket = io();
 
 // let serial;
 let latestData = "waiting for data";
-let yricordo;
-let colorricordo;
+let ycontatto;
+let colorcontatto;
 
 
 
@@ -28,24 +28,24 @@ socket.on('sensor', (message) => {
 
 function draw() {
 
-let risultatoricordo = getItem('risultatoricordo')
+let risultatocontatto = getItem('risultatocontatto')
 
-risultatoricordo = getItem('risultatoricordo')
-yricordo = floor(map(risultatoricordo,0,100,0,200 ))
-select('#risultatoricordo').html(risultatoricordo + '%')
-if(risultatoricordo>20 && risultatoricordo <101){
-  colorricordo = "#2c2cff"
+risultatocontatto = getItem('risultatocontatto')
+ycontatto = floor(map(risultatocontatto,0,100,0,200 ))
+select('#risultatocontatto').html(risultatocontatto + '/100')
+if(risultatocontatto>20 && risultatocontatto <101){
+  colorcontatto = "#2c2cff"
 }
-else{colorricordo = 'red'}
+else{colorcontatto = 'red'}
 
-er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, colorricordo, width/40, yricordo);
+  er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, colorcontatto, width/40,ycontatto);
 
-  er2.transmit();
-  select('#risultatoricordo').html(risultatoricordo + '/100')
+  er4.transmit();
+  select('#risultatocontatto').html(risultatocontatto + '/100')
 
   if(frameCount > '300'){
-    let risultatoricordo = getItem('risultatoricordo')
-    storeItem('risultatoricordo' ,risultatoricordo)
+    let risultatocontatto = getItem('risultatocontatto')
+    storeItem('risultatocontatto' ,risultatocontatto)
     window.open('home.html', '_self')
 
   }

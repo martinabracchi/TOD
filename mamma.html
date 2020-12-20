@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel='stylesheet' href='home.css'>
+  <link rel='stylesheet' href='nome.css'>
   <meta charset="utf-8">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
   <style>
@@ -12,57 +12,58 @@
     }
   </style>
   <canvas id="myCanvas" width="2400" height="1080"></canvas>
-  <canvas id="canvasFeedback">
+  <canvas id="canvasBlob">
 
   </canvas>
-
-  <script src="/socket.io/socket.io.js"></script>
   <script src="p5.min.js"></script>
-  <script src="p5.serialport.js"></script>
   <script src="p5.sound.min.js"></script>
-  <script src="home1.js"></script>
+  <script src="sketchnucleo.js"></script>
 
 </head>
 
 <body>
   <H1 id="nome" class="classenome"> DIEGO ARMANDO</H1>
-  <H1 id="data" class="classedata"> </H1>
-  <!-- <H1 id="posizione" classe="classeposizione"> HOME </H1> -->
+  <H1 id="data" class="classedata"> 22 . 12 . 2020</H1>
+  <H1 id="posizione" classe="classeposizione"> NUCLEO</H1>
 
   <H2 id="home" class="classehome"> Home </H2>
   <H2 id="nucleo" class="classenucleo"> Nucleo </H2>
   <H2 id="attivita" class="classeattivita"> Attività </H2>
 
+  <div id="nomeattivita">
+    <H2  class="nomeattivita"> Mamma </H2></div>
+
  <a id = "click1" href="home.html">
   <div id="picto1" class="classepicto1" >
     </a>
- <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/HOME.png">
+ <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/HOME.png">
   </div>
 
  <a id = "click2" href="nucleo.html">
   <div id="picto2" class="classepicto2"></a>
-    <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/NUCLEO.png">
+    <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/NUCLEO.png">
   </div>
 
- <a id = "click3" href="attivita.html">
+ <a id = "click3" href="attività.html">
   <div id="picto3" class="classepicto3"></a>
     <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/ATTIVITA.png">
   </div>
 
-  <a id = "click4" href="spegni.html">
-   <div id="picto4" class="classepicto4"></a>
-     <img height="100%" width="100%" src="./assets/spegni.png">
+
+   <div id="nucleo2" onclick="changec()">
+     <img height="100%" width="110%" src="./assets/nucleo/4.png">
    </div>
 
 
+   <a id = "freccia" href="nucleo.html">
+    <div id="indietro" class="classeindietro" >
+      </a>
+   <img height="100%" width="100%" src="./assets/indietro.png">
+    </div>
 
-  <div class="grafico"></a>
-    <img height="90%" width="90%" src="./assets/PITTOGRAMMI/TASK/GRAFICO.png">
-  </div>
 
-    <H1 id="risultatoricordo">  </H1>
-    <H1 id="risultatocontatto"> </H1>
-    <H1 id="risultatoconversazione"> </H1>
+
+
 
 </body>
 

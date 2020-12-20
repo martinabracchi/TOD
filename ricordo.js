@@ -7,8 +7,10 @@ let url = new URL(url_string);
 // let serial;
 let latestData = "waiting for data";
 let timer = 0;
-let qualità = 100;
+let malus = 0;
 let punteggio;
+
+
 
 
 
@@ -17,6 +19,7 @@ let punteggio;
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasBlob');
+
 
   userStartAudio();
   mic = new p5.AudioIn();
@@ -32,13 +35,20 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-  background(0)
 
-// console.log(latestData)
+  messaggio1 = '7'
+  socket.emit('saluto', messaggio1);
+
+  background(0)
 
   translate(width / 2, height / 2)
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0,1, 10,200)
+
+  if(d>20){
+    messaggio1 = '4';
+    socket.emit('saluto', messaggio1);
+  }
   // console.log(d)
 
   var radius = d+100;
@@ -84,8 +94,19 @@ function draw() {
 
 
 
+if(timer<40){
+punteggio = timer - malus;}
+if(timer>40){
+  punteggio = timer + malus
+}
 
-punteggio = timer*10 + qualità/5;
+if(punteggio < 0){
+  punteggio = 0
+}
+
+if(timer> 200){
+  punteggio = 150;
+}
 console.log("PUNTEGGIO: " + punteggio)
 
 if(frameCount>300){
@@ -95,16 +116,15 @@ document.getElementById("picto1").style.display = "none"
 document.getElementById("home").style.display = "none"
 document.getElementById("istruzione").style.display = "none"
 
-  if(latestData === 11){
-  let punteggio= timer + qualità/10;
+  if(latestData === 2){
   console.log(latestData);
-  // let nuovapagina = "elaborazioneric.html";
-  storeItem('punteggio', punteggio)
+  storeItem('risultatoricordo', punteggio)
   window.open("elaborazioneric.html", '_self')
   }
 }
 
 }
+
 
 function timerup(){
   timer = timer + 1
@@ -112,13 +132,12 @@ function timerup(){
 }
 
 function riduzione(){
+
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0,1, 10,500)
   if(latestData === 4 || d>15){
-  qualità = qualità-0.01}
+  malus = malus+0.01}
 }
-
-
 
 
 

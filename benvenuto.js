@@ -30,8 +30,8 @@ socket.on('sensor', (message) => {
 function draw() {
   background(0)
 
-
-// console.log(latestData)
+  let messaggio1 = '5';
+  socket.emit('saluto', messaggio1);
 
   translate(width / 2, height / 2)
   const micLevel = mic.getLevel();
@@ -41,20 +41,6 @@ function draw() {
   var radius = d+100;
 
 
-  beginShape();
-  fill(color('#ff0000'));
-  noStroke();
-  var xoff = 0;
-  for (var b = 0; b < TWO_PI; b += 0.2) {
-    var offset = map(noise(xoff, yoff), 0, 1, -150, 100);
-    var r = radius + offset;
-    var x = r * cos(b);
-    var y = r * sin(b);
-    vertex(x, y);
-    xoff += 0.2;
-  }
-  yoff += 0.005;
-  endShape();
 
 
 
@@ -92,9 +78,9 @@ else{
   }
   select('#data1').html(datagiusta)
 
-    if(frameCount > 300){
+    if(frameCount > 10){
     console.log(latestData)
-    window.open('home.html', '_self')
+    window.open('saluto.html', '_self')
     }
 
 

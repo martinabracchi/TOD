@@ -4,12 +4,11 @@ const socket = io();
 
 const url_string = window.location.href
 let url = new URL(url_string);
-
+let parametro = url.searchParams.get("punt");
 
 
 // let serial;
 let latestData = "waiting for data";
-
 
 
 
@@ -20,8 +19,6 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
-
-
 }
 
 socket.on('sensor', (message) => {
@@ -31,9 +28,9 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-  let risultatoricordo = getItem('risultatoricordo');
   background(0)
-  console.log(risultatoricordo)
+  let messaggio1 = '5';
+  socket.emit('saluto', messaggio1);
 
 // console.log(latestData)
 
@@ -43,23 +40,6 @@ function draw() {
   // console.log(d)
 
   var radius = d+100;
-
-
-  beginShape();
-  fill(color('#ff0000'));
-  noStroke();
-  var xoff = 0;
-  for (var b = 0; b < TWO_PI; b += 0.2) {
-    var offset = map(noise(xoff, yoff), 0, 1, -150, 100);
-    var r = radius + offset;
-    var x = r * cos(b);
-    var y = r * sin(b);
-    vertex(x, y);
-    xoff += 0.2;
-  }
-  yoff += 0.005;
-  endShape();
-
 
 
   beginShape();
@@ -79,13 +59,12 @@ function draw() {
   endShape();
 
 
-    if(frameCount >50){
-    console.log(latestData)
-    storeItem('risultatoricordo' ,risultatoricordo)
-    window.open('punteggioric.html', '_self')
-    }
 
 
+}
+
+function mouseClicked(){
+      window.open('benvenuto.html', '_self')
 }
 
 

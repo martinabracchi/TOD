@@ -31,9 +31,9 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-  let risultatoricordo = getItem('risultatoricordo');
+  let risultatoconversazione = getItem('risultatoconversazione');
   background(0)
-  console.log(risultatoricordo)
+  console.log(risultatoconversazione)
 
 // console.log(latestData)
 
@@ -79,10 +79,10 @@ function draw() {
   endShape();
 
 
-    if(frameCount >50){
+    if(frameCount > 50){
     console.log(latestData)
-    storeItem('risultatoricordo' ,risultatoricordo)
-    window.open('punteggioric.html', '_self')
+    storeItem('risultatoconversazione' ,risultatoconversazione)
+    window.open('punteggioconv.html', '_self')
     }
 
 

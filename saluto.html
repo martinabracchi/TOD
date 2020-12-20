@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='benvenuto.css'>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <canvas id="myCanvas" width="2400" height="1080"></canvas>
+  <canvas id="canvasBlob">
+
+  </canvas>
+    <script src="/socket.io/socket.io.js"></script>
+  <script src="p5.min.js"></script>
+
+  <script src="p5.speech.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <script src="saluto.js"></script>
+
+</head>
+
+
+<body>
+
+  <div class="divistru">
+  <H3 id="istruzione">Registra il tuo saluto</H3>
+    <H3 id="saluto"></H3>
+  </div>
+
+  <H3 id="istruzpiccola">Tocca lo schermo per iniziare</H3>
+
+  <div id="conferma">
+   <H3 id = "chiediconferma"> Confermi il saluto registrato? </H3>
+   <button type="button" id="si" onclick='window.open("home.html", "_self")'> SI </button>
+    <button type="button" id="no" onclick='window.open("saluto.html", "_self")'> NO </button>
+</div>
+</body>
+
+</html>

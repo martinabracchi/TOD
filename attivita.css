@@ -13,14 +13,14 @@
   z-index: -10;
 }
 
-#canvasBlob {
+#canvasFeedback {
   width: 100vw;
   height: 100vh;
   border: 10px black solid;
   position: absolute;
   z-index: 10;
-  filter: blur(40px);
-  -webkit-filter: blur(40px);
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
   right: 0
 }
 
@@ -29,45 +29,49 @@
   position: absolute;
   z-index: 10;
   display: block;
-  font-size: 3vh;
-  left: 2vw;
-  top: 1vw;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  left: 2em;
+  top: 1em;
   font-family: myFirstFont;
 }
 
 #data {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
-  font-size: 3vh;
+  font-size: 2em;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   position: absolute;
-  right: 2vw;
-  top: 1vw;
+  right: 2em;
+  top: 1em;
   font-family: myFirstFont;
 }
 
 #posizione {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
-  font-size: 3vh;
+  font-size: 2em;
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   position: absolute;
-  right: 2vw;
-  bottom: 1vw;
+  right: 2em;
+  bottom: 1em;
   font-family: myFirstFont;
 }
 
 #home {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -77,12 +81,13 @@
   font-family: myFirstFont;
   position: absolute;
   left: 2vw;
-  bottom: 1vw;
+  bottom:1vw;
+
 }
 
 #nucleo {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -91,7 +96,7 @@
   margin-inline-end: 0px;
   position: absolute;
   left: 8vw;
-  bottom: 1vw;
+  bottom:1vw;
   font-family: myFirstFont;
 }
 
@@ -106,43 +111,22 @@
   margin-inline-end: 0px;
   position: absolute;
   left: 14vw;
-  bottom: 1vw;
+  bottom:1vw;
   font-family: myFirstFont;
+
 }
 
 
-
-.divistru{
-  width: 500px;
-  position: absolute;
-  bottom: 0px;
-  margin-left: 50%;
-  margin-right: 50%;
-  z-index: 50;
-}
-
-
-#istruzione {
-  color: #ffffff;
-  z-index: 50;
-  text-align: center;
-  position: relative;
-  right: 50%;
-  margin-bottom: 20%;
-  font-size: 6vh;
-  font-family: myFirstFont;
-}
-
-#picto1 {
+#picto1{
   height: 8vh;
   width: 8vh;
   position: absolute;
-  z-index: 50;
+  z-index: 10;
   left: 2vw;
   bottom: 4vw;
 }
 
-#picto2 {
+#picto2{
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -151,7 +135,7 @@
   bottom: 4vw;
 }
 
-#picto3 {
+#picto3{
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -160,19 +144,137 @@
   bottom: 4vw;
 }
 
-#pictotask {
-  height: 150px;
-  width: 150px;
+
+#attività {
+  left: 33vw;
+  top: 15vh;
   position: absolute;
-  right: 46.8%;
-  top: 45%;
-  z-index: 30;
+
+}
+
+#attività1 {
+  left: 70vw;
+  top: 25vh;
+  position: absolute;
+}
+
+#attività2 {
+  left: 15vw;
+  top: 25vh;
+  position: absolute;
+}
+
+#avanti {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45vh;
+  left: 70vw;
+  z-index: 10;
+}
+
+#indietro {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45vh;
+  left: 20vw;
+  z-index: 10;
+}
+
+#divdatagiusta{
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  margin-right:50%;
+  margin-left: 50%;
+  bottom: 0;
+}
+
+#divdatasx{
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  margin-right:50%;
+  margin-left: 40%;
+  bottom: 0;
+}
+
+#divdatadx{
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  right:19%;
+  margin-left: 50%;
+  bottom: 0;
+}
+
+#datagiustapiccola{
+color: #ffffff;
+z-index: 10;
+font-size: 2em;
+right: 50%;
+bottom: 2em;
+position: relative;
+font-family: myFirstFont;
+text-align: center;
+opacity: 0.5;
+}
+
+#datagiusta{
+color: #ffffff;
+z-index: 10;
+display: block;
+font-size: 2em;
+right: 50%;
+bottom: 2em;
+position: relative;
+font-family: myFirstFont;
+text-align: center;
+}
+
+#cerchi{
+  z-index: 150;
+  position: absolute;
+  left:33vw;
+  top: 15vh;
 }
 
 
+#nero{
+  left: 70vw;
+  top: 25vh;
+  position: absolute;
+  z-index: 100;
+}
+#nero2{
+  left: 15vw;
+  top: 25vh;
+  position: absolute;
+  z-index: 100;
+}
 
+#nerino{
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  right:24%;
+  margin-left: 50%;
+  bottom:5%;
 
-#click1 {
+  z-index: 100;
+}
+
+#nerino2{
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  margin-left: 24%;
+  bottom: 5%;
+  z-index: 100;
+}
+
+#click1{
   display: block;
   height: 14vh;
   width: 9vh;
@@ -180,19 +282,21 @@
   z-index: 20;
   left: 2vw;
   bottom: 3vh;
+
 }
 
-#click2 {
+#click2{
   display: block;
   height: 14vh;
   width: 9vh;
   position: absolute;
-  z-index: 20;
+  z-index: 70;
   left: 8vw;
   bottom: 3vh;
+
 }
 
-#click3 {
+#click3{
   display: block;
   height: 14vh;
   width: 9vh;

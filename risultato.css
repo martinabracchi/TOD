@@ -54,18 +54,49 @@ font-family: myFirstFont;
   position: absolute;
   right: 2vw;
   bottom:1vw;
-font-family: myFirstFont;
+ font-family: myFirstFont;
 }
 
 #risultatoricordo{
   color: #ffffff;
   z-index: 10;
-  position: relative;
+  position: absolute;
   display: block;
   font-size: 3vh;
-  position: absolute;
-  right: 50%;
-  left: 50%;
-  top:12%;
+  right: 46.5%;
+  top:6%;
   font-family: myFirstFont;
+}
+
+#risultatocontatto{
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right: 66.5%;
+  top:72%;
+  font-family: myFirstFont;
+}
+
+#risultatoconversazione{
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right: 27%;
+  top:72%;
+  font-family: myFirstFont;
+}
+
+.grafico{
+  position: absolute;
+  display:block;
+  left: 50%;
+  top: 15%;
+  margin-left: -344px;
+  height: 800px;
+  width: 840px;
+  z-index: 80;
 }

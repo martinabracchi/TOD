@@ -8,14 +8,14 @@ const path = require('path');
 // Load serialport module to communicate with arduino
 const SerialPort = require('serialport');
 // Open up connection with Arduino board
-const serial = new SerialPort('COM5', {
-        baudRate: 9600
+const serial = new SerialPort('COM6', {
+        baudRate: 115200
     }, function() {
         console.log('Ready to communicate with Arduino on serial port');
 })
 
 // Define port on which the webpage will be served from
-const port = 8001;
+let port = process.env.PORT || 8001;
 // list of possible extentions that the browser can serve
 const mimeTypes = {
     '.html': 'text/html',
@@ -89,6 +89,15 @@ io.on('connection', (socket) => {
       })
   });
 
+  socket.on('messaggio', (messaggio) => {
+    console.log('mess to arduino: ' + messaggio)
+    serial.write(`${messaggio}\n`, function(err) {
+        if (err) {
+          return console.log('Error on write: ', err.message)
+        }
+    })
+});
+
     // log if an user disconnects
     socket.on('disconnect', () => {
         console.log('client disconnected');
@@ -97,15 +106,12 @@ io.on('connection', (socket) => {
     });
 
     function forwardMessage(data) {
-      console.log('dato ricevuto: ' + data.toString().replace(/\n*/, ''))
+      console.log('mess from arduino: ' + data.toString().replace(/\n*/, ''))
         let message = +data.toString().replace(/\n*/, '');
 
         socket.emit('sensor', message);
 
     }
-
-
-
 
 });
 

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='attivita.css'>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <canvas id="myCanvas" width="2400" height="1080"></canvas>
+  <canvas id="canvasFeedback">
+
+  </canvas>
+  <script src="p5.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+</head>
+
+<body>
+  <H1 id="nome" class="classenome"> DIEGO ARMANDO</H1>
+  <H1 id="data" class="classedata"> 22 . 12 . 2020</H1>
+  <H1 id="posizione" classe="classeposizione"> ATTIVITA </H1>
+
+  <H2 id="home" class="classehome"> Home </H2>
+  <H2 id="nucleo" class="classenucleo"> Nucleo </H2>
+  <H2 id="attivita" class="classeattivita"> Attività </H2>
+
+  <a id = "click1" href="home.html">
+   <div id="picto1" class="classepicto1" >
+     </a>
+  <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/HOME.png">
+   </div>
+
+  <a id = "click2" href="nucleo.html">
+   <div id="picto2" class="classepicto2"></a>
+     <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/NUCLEO.png">
+   </div>
+
+  <a id = "click3" href="attivita.html">
+   <div id="picto3" class="classepicto3"></a>
+     <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/ATTIVITA.png">
+   </div>
+
+
+  </div>
+  <div id="avanti">
+    <input type="image" onclick="plusDivs(1)" src="./assets/avanti.png" width="150px" heigt="150px">
+  </div>
+  <div id="indietro">
+    <input type="image" onclick="plusDivs(-1)" src="./assets/indietro.png"width="150px" heigt="150px">
+  </div>
+
+  <div id="cerchi"> <img width="800px" height="800px"src="./assets/cerchi.png"></div>
+
+  <div class="myText" id="divdatagiusta" > <H1 id ="datagiusta" >22 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >12 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >13 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >14 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >15 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >16 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >17 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >18 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >19 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >20 . 12</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >21 . 12</H1></div>
+
+  <div class="myTextsx" id="divdatasx" > <H1 id ="datagiustapiccola" >22 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >12 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >13 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >14 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >15 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >16 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >17 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >18 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >19 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >20 . 12</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >21 . 12</H1></div>
+  <div id="nerino2"> <img  width =100% height = 100% src="assets/nero.jpg"></div>
+
+  <div class="myTextdx" id="divdatadx" > <H1 id ="datagiustapiccola" >22 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >12 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >13 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >14 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >15 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >16 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >17 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >18 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >19 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >20 . 12</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >21 . 12</H1></div>
+<div id="nerino"> <img  width =100% height = 100% src="assets/nero.jpg"></div>
+
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/1.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/2.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/3.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/4.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/5.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/6.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/7.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/8.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/9.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/10.png">
+<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/11.png">
+
+
+
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/1.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/2.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/3.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/4.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/5.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/6.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/7.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/8.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/9.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/10.png">
+<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/11.png">
+<img id = 'nero' width ='500px' height = '400px' src="assets/nero.jpg">
+
+
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/1.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/2.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/3.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/4.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/5.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/6.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/7.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/8.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/9.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/10.png">
+<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/11.png">
+<img id = 'nero2' width ='500px' height = '400px' src="assets/nero.jpg">
+
+  <script>
+
+  var slideIndex = 1;
+  var slideIndexdx = 2;
+  var slideIndexsx = 0;
+  var textIndex = 1;
+  var textIndexdx = 2;
+  var textIndexsx = 11;
+
+  showDivs(slideIndex);
+showDivsdx(slideIndexdx);
+showDivssx(slideIndexsx);
+showText(textIndex);
+showTextdx(textIndexdx);
+showTextsx(textIndexsx);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+    showDivsdx(slideIndexdx += n);
+    showDivssx(slideIndexsx += n);
+    showText(textIndex += n);
+    showTextdx(textIndexdx += n);
+    showTextsx(textIndexsx += n);
+
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var y = document.getElementById('nero');
+    var z = document.getElementById('nero2');
+    var u = document.getElementById('nerino');
+    var m = document.getElementById('nerino2');
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+
+    // console.log(slideIndex)
+    if (slideIndex==1) {y.style.display = 'block'
+  u.style.display = 'block'}
+    else{
+      y.style.display = 'none'
+      u.style.display = 'none'
+    }
+
+    if (slideIndex==2) {z.style.display = 'block'
+  m.style.display = 'block'}
+    else{
+      z.style.display = 'none'
+      m.style.display = 'none'
+    }
+
+
+}
+
+
+function showText(n){
+  var i;
+  var x = document.getElementsByClassName("myText");
+  if (n > x.length) {textIndex = 1}
+  if (n < 1) {textIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[textIndex-1].style.display = "block";
+  console.log('centro'+textIndex);
+}
+
+function showTextdx(n){
+  var i;
+  var x = document.getElementsByClassName("myTextdx");
+  if (n > x.length) {textIndexdx = 1}
+  if (n < 1) {textIndexdx = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[textIndexdx-1].style.display = "block";
+  console.log('dx' + textIndexdx);
+}
+
+function showTextsx(n){
+  var i;
+  var x = document.getElementsByClassName("myTextsx");
+  if (n > x.length) {textIndexsx = 1}
+  if (n < 1) {textIndexsx = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[textIndexsx-1].style.display = "block";
+  console.log('sx'+textIndexsx);
+}
+
+
+
+
+function showDivsdx(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlidesdx");
+  // var y = document.getElementById('nero');
+  if (n > x.length) {slideIndexdx = 1}
+  if (n < 1) {slideIndexdx = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndexdx-1].style.display = "block";
+
+
+
+}
+
+
+function showDivssx(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlidessx");
+  if (n > x.length) {slideIndexsx = 1}
+  if (n < 1) {slideIndexsx = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndexsx-1].style.display = "block";
+
+}
+
+
+  </script>
+
+</body>
+</html>

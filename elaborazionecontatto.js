@@ -31,18 +31,18 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-  let risultatoricordo = getItem('risultatoricordo');
+  let risultatocontatto = getItem('risultatocontatto');
   background(0)
-  console.log(risultatoricordo)
+  console.log(risultatocontatto)
 
 // console.log(latestData)
 
   translate(width / 2, height / 2)
   const micLevel = mic.getLevel();
-  var d = map(micLevel, 0,1, 10,200)
+
   // console.log(d)
 
-  var radius = d+100;
+  var radius = 100;
 
 
   beginShape();
@@ -79,10 +79,10 @@ function draw() {
   endShape();
 
 
-    if(frameCount >50){
+    if(frameCount > 50){
     console.log(latestData)
-    storeItem('risultatoricordo' ,risultatoricordo)
-    window.open('punteggioric.html', '_self')
+    storeItem('risultatocontatto' ,risultatocontatto)
+    window.open('punteggiocontatto.html', '_self')
     }
 
 

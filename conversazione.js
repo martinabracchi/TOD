@@ -5,6 +5,10 @@ const socket = io();
 // let serial;
 var cosadetta;
 let latestData = "waiting for data";
+var bonus = 0;
+var punteggio;
+var timer = 0;
+var aggiunto = false;
 
 socket.on('sensor', (message) => {
   latestData = message
@@ -24,6 +28,8 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
+
+  setInterval(timerup, 1000)
 }
 
 
@@ -41,6 +47,9 @@ function gotSpeech() {
 
 function draw() {
 
+  messaggio1 = '7'
+  socket.emit('saluto', messaggio1);
+  
   background(0)
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0, 1, 0, 300)
@@ -48,9 +57,27 @@ function draw() {
   var radius = d + 100;
   translate(width / 2, height / 2)
 
+  if (cosadetta === "bene" || cosadetta === "veramente" || cosadetta === "cuore" || cosadetta === "ieri" || cosadetta === "io" || cosadetta === "molto"){
+  if (!aggiunto){
+  bonus = bonus + 0.1;
+  aggiunto = true;}
+  }
+  aggiunto = false;
+
+
+  if(timer < 20){
+  punteggio = timer + bonus}
+  if(timer> 20 & timer < 60){
+    punteggio = timer + bonus/2
+  }
+  if(timer > 60){
+    punteggio = timer - bonus;
+  }
+  console.log("PUNTEGGIO: " + punteggio);
+
 
   beginShape();
-  if (cosadetta === "bene" || cosadetta === "cammello") {
+  if (cosadetta === "bene" || cosadetta === "veramente" || cosadetta === "cuore" || cosadetta === "ieri" || cosadetta === "io" || cosadetta === "molto") {
     fill(color("#2c2cff"));
   } else {
     fill('red')
@@ -90,28 +117,19 @@ function draw() {
     document.getElementById("picto1").style.display = "none"
     document.getElementById("home").style.display = "none"
     document.getElementById("istruzione").style.display = "none"
-
-
-    if (latestData === 2) {
+    if (latestData === 3) {
       console.log(latestData)
-      window.open('index.html', '_self')
+      storeItem('risultatoconversazione', punteggio)
+      window.open('elaborazioneconv.html', '_self')
     }
   }
 
 
 }
 
-function ascolta() {
-  let continuous = true;
-  // If you want to try partial recognition (faster, less accurate)
-  let interim = true;
-  speechRec.start(continuous, interim);
-
-}
-
-function mousePressed(){
-  speechRec.stop();
-  setTimeout(gotSpeech, 500)
+function timerup(){
+  timer = timer + 1
+  console.log("SECONDI PASSATI: " + timer)
 }
 
 function windowResized() {

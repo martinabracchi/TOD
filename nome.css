@@ -3,7 +3,7 @@
   src: url(./assets/Whyte-Book.ttf);
 }
 
-#myCanvas {
+#myCanvas{
   width: 100vw;
   height: 100vh;
   border: 1px black solid;
@@ -11,18 +11,22 @@
   /* background: transparent; */
   position: absolute;
   z-index: -10;
+
 }
 
-#canvasBlob {
+#canvasBlob{
   width: 100vw;
   height: 100vh;
   border: 10px black solid;
   position: absolute;
-  z-index: 10;
+  z-index:10;
   filter: blur(40px);
-  -webkit-filter: blur(40px);
-  right: 0
+-webkit-filter: blur(40px);
+
+  right:0
+
 }
+
 
 #nome {
   color: #ffffff;
@@ -30,14 +34,19 @@
   z-index: 10;
   display: block;
   font-size: 3vh;
+  /* margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
   left: 2vw;
   top: 1vw;
-  font-family: myFirstFont;
+font-family: myFirstFont;
+
 }
 
 #data {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 3vh;
   margin-block-start: 0.67em;
@@ -46,13 +55,14 @@
   margin-inline-end: 0px;
   position: absolute;
   right: 2vw;
-  top: 1vw;
-  font-family: myFirstFont;
+  top:1vw;
+font-family: myFirstFont;
 }
+
 
 #posizione {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 3vh;
   margin-block-start: 0.67em;
@@ -61,13 +71,14 @@
   margin-inline-end: 0px;
   position: absolute;
   right: 2vw;
-  bottom: 1vw;
-  font-family: myFirstFont;
+  bottom:1vw;
+font-family: myFirstFont;
 }
+
 
 #home {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -77,12 +88,13 @@
   font-family: myFirstFont;
   position: absolute;
   left: 2vw;
-  bottom: 1vw;
+  bottom:1vw;
+
 }
 
 #nucleo {
   color: #ffffff;
-  z-index: 50;
+  z-index: 10;
   display: block;
   font-size: 2.5vh;
   margin-block-start: 0.67em;
@@ -91,7 +103,7 @@
   margin-inline-end: 0px;
   position: absolute;
   left: 8vw;
-  bottom: 1vw;
+  bottom:1vw;
   font-family: myFirstFont;
 }
 
@@ -106,43 +118,22 @@
   margin-inline-end: 0px;
   position: absolute;
   left: 14vw;
-  bottom: 1vw;
+  bottom:1vw;
   font-family: myFirstFont;
+
 }
 
 
-
-.divistru{
-  width: 500px;
-  position: absolute;
-  bottom: 0px;
-  margin-left: 50%;
-  margin-right: 50%;
-  z-index: 50;
-}
-
-
-#istruzione {
-  color: #ffffff;
-  z-index: 50;
-  text-align: center;
-  position: relative;
-  right: 50%;
-  margin-bottom: 20%;
-  font-size: 6vh;
-  font-family: myFirstFont;
-}
-
-#picto1 {
+#picto1{
   height: 8vh;
   width: 8vh;
   position: absolute;
-  z-index: 50;
+  z-index: 10;
   left: 2vw;
   bottom: 4vw;
 }
 
-#picto2 {
+#picto2{
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -151,7 +142,7 @@
   bottom: 4vw;
 }
 
-#picto3 {
+#picto3{
   height: 8vh;
   width: 8vh;
   position: absolute;
@@ -160,19 +151,17 @@
   bottom: 4vw;
 }
 
-#pictotask {
-  height: 150px;
-  width: 150px;
+#picto4{
+  height: 50vh;
+  width: 50vh;
   position: absolute;
-  right: 46.8%;
-  top: 45%;
   z-index: 30;
+  left: 40vw;
+  bottom: 20vh;
 }
 
 
-
-
-#click1 {
+#click1{
   display: block;
   height: 14vh;
   width: 9vh;
@@ -180,9 +169,10 @@
   z-index: 20;
   left: 2vw;
   bottom: 3vh;
+
 }
 
-#click2 {
+#click2{
   display: block;
   height: 14vh;
   width: 9vh;
@@ -190,9 +180,10 @@
   z-index: 20;
   left: 8vw;
   bottom: 3vh;
+
 }
 
-#click3 {
+#click3{
   display: block;
   height: 14vh;
   width: 9vh;
@@ -200,4 +191,81 @@
   z-index: 20;
   left: 14vw;
   bottom: 3vh;
+
+}
+
+
+
+#nucleo2{
+  position:relative;
+  padding-top: 50px;
+  margin: auto;
+width: 35vw;
+height: 35vw;
+z-index:100;
+}
+
+
+
+
+
+
+.name{
+  color: #ffffff;
+  z-index: 100;
+  display: block;
+  font-size: 4vh;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: myFirstFont;
+  position: relative;
+width:100%;
+  top: 115%;
+  text-align: center;
+}
+
+
+
+#nomeattivita{
+width: 500px;
+position: absolute;
+bottom: 0px;
+right: 50%;
+left: 50%;
+margin-left: -250px;
+z-index: 150;
+text-align:center;
+
+}
+
+
+.nomeattivita{
+  right: 50%;
+  color: white;
+  font-family: myFirstFont;
+  font-size: 5.5vh;
+
+}
+
+
+#freccia{
+  display: block;
+  height: 20vh;
+  width: 20vh;
+  position: absolute;
+  z-index: 20;
+  left: 0vw;
+top: 40%;
+}
+
+
+#indietro{
+  height: 20vh;
+  width: 20vh;
+  position: absolute;
+  z-index: 10;
+  left: 0%;
+  bottom: 40%;
 }
