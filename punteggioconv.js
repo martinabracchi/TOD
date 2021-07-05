@@ -13,11 +13,24 @@ let colorconversazione;
 
 
 function setup() {
+
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasFeedback');
   angleMode(DEGREES);
 
+  risultatoconversazione = getItem('risultatoconversazione');
+  yconversazione = map(risultatoconversazione,0,100,0,200 )
+  select('#risultatoconversazione').html(risultatoconversazione + '%')
+  if(risultatoconversazione>20 && risultatoconversazione <101){
+  colorconversazione = "#2c2cff"
+  messaggio1 = '5';
+  socket.emit('saluto', messaggio1);
+  }
+  else{colorconversazione = 'red'
+  messaggio1 = '4';
+  socket.emit('saluto', messaggio1);}
 
+  manda()
 }
 
 socket.on('sensor', (message) => {
@@ -27,26 +40,27 @@ socket.on('sensor', (message) => {
 
 function draw() {
 
-risultatoconversazione = getItem('risultatoconversazione');
-yconversazione = map(risultatoconversazione,0,100,0,200 )
-select('#risultatoconversazione').html(risultatoconversazione + '%')
-if(risultatoconversazione>30 && risultatoconversazione <101){
-colorconversazione = "#2c2cff"
-}
-else{colorconversazione = 'red'}
-
-
 er3 = new EggRing(width*0.49, height*0.58+100, 300, 300, colorconversazione, width/40, yconversazione);
 
   er3.transmit();
   select('#risultatoconversazione').html(risultatoconversazione + '/100')
 
-  if(frameCount > '300'){
+  if(frameCount > '170'){
     let risultatoconversazione = getItem('risultatoconversazione')
     storeItem('risultatoconversazione' ,risultatoconversazione)
     window.open('home.html', '_self')
 
   }
+}
+
+function manda(){
+  if(risultatoconversazione>20 && risultatoconversazione <101){
+    messaggio1 = '5';
+    socket.emit('saluto', messaggio1);
+  }
+  else{
+  messaggio1 = '4';
+  socket.emit('saluto', messaggio1);}
 }
 
 class Egg {

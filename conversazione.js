@@ -30,6 +30,7 @@ function setup() {
   mic.start();
 
   setInterval(timerup, 1000)
+  manda()
 }
 
 
@@ -47,9 +48,6 @@ function gotSpeech() {
 
 function draw() {
 
-  messaggio1 = '7'
-  socket.emit('saluto', messaggio1);
-  
   background(0)
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0, 1, 0, 300)
@@ -59,26 +57,35 @@ function draw() {
 
   if (cosadetta === "bene" || cosadetta === "veramente" || cosadetta === "cuore" || cosadetta === "ieri" || cosadetta === "io" || cosadetta === "molto"){
   if (!aggiunto){
-  bonus = bonus + 0.1;
+  bonus = bonus + 0.01;
   aggiunto = true;}
   }
   aggiunto = false;
 
 
-  if(timer < 20){
+  if(timer < 30){
   punteggio = timer + bonus}
-  if(timer> 20 & timer < 60){
+  
+  if(timer> 30 & timer < 90){
     punteggio = timer + bonus/2
   }
-  if(timer > 60){
-    punteggio = timer - bonus;
+
+  if(timer> 90){
+    punteggio = timer/2 + bonus*1.5
+  }
+
+  if(timer> 150 || punteggio > 150){
+    punteggio = 150;
   }
   console.log("PUNTEGGIO: " + punteggio);
 
 
   beginShape();
   if (cosadetta === "bene" || cosadetta === "veramente" || cosadetta === "cuore" || cosadetta === "ieri" || cosadetta === "io" || cosadetta === "molto") {
-    fill(color("#2c2cff"));
+  for (let i = 0; i<1; i+=0.1){
+    fill(lerpColor(color('red'), color('#2c2cff'), i))
+    // fill(color("#2c2cff"));
+  }
   } else {
     fill('red')
   }
@@ -112,20 +119,22 @@ function draw() {
   yoff += 0.005;
   endShape();
 
-  if (frameCount > 300) {
-    document.getElementById("pictotask").style.display = "none"
-    document.getElementById("picto1").style.display = "none"
-    document.getElementById("home").style.display = "none"
-    document.getElementById("istruzione").style.display = "none"
+  if (frameCount > 100) {
+    document.getElementById("pictotask").style.display = "none";
+    document.getElementById("picto1").style.display = "none";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("istruzione").style.display = "none";
+
     if (latestData === 3) {
       console.log(latestData)
-      storeItem('risultatoconversazione', punteggio)
+      storeItem('risultatoconversazione', floor(punteggio))
       window.open('elaborazioneconv.html', '_self')
     }
   }
-
-
 }
+function manda(){
+messaggio1 = '7'
+socket.emit('saluto', messaggio1);}
 
 function timerup(){
   timer = timer + 1

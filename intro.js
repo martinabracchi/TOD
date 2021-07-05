@@ -19,6 +19,8 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
+  setInterval(manda,1000);
+
 }
 
 socket.on('sensor', (message) => {
@@ -29,8 +31,7 @@ socket.on('sensor', (message) => {
 
 function draw() {
   background(0)
-  let messaggio1 = '5';
-  socket.emit('saluto', messaggio1);
+
 
 // console.log(latestData)
 
@@ -62,6 +63,12 @@ function draw() {
 
 
 }
+
+function manda(){
+  let messaggio1 = '4';
+  socket.emit('saluto', messaggio1);
+}
+
 
 function mouseClicked(){
       window.open('benvenuto.html', '_self')

@@ -9,6 +9,7 @@
     body {
       padding: 0;
       margin: 0;
+      overflow: hidden;
     }
   </style>
   <canvas id="myCanvas" width="2400" height="1080"></canvas>
@@ -19,7 +20,6 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="p5.min.js"></script>
   <script src="p5.serialport.js"></script>
-  <script src="p5.sound.min.js"></script>
   <script src="home1.js"></script>
 
 </head>
@@ -34,30 +34,28 @@
   <H2 id="attivita" class="classeattivita"> Attività </H2>
 
  <a id = "click1" href="home.html">
-  <div id="picto1" class="classepicto1" >
-    </a>
+<div id="picto1" class="classepicto1" >
+</a>
  <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/HOME.png">
   </div>
 
  <a id = "click2" href="nucleo.html">
   <div id="picto2" class="classepicto2"></a>
-    <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/NUCLEO.png">
+  <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/NUCLEO.png">
   </div>
 
  <a id = "click3" href="attivita.html">
   <div id="picto3" class="classepicto3"></a>
-    <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/ATTIVITA.png">
+  <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/ATTIVITA.png">
   </div>
 
   <a id = "click4" href="spegni.html">
    <div id="picto4" class="classepicto4"></a>
-     <img height="100%" width="100%" src="./assets/spegni.png">
+   <img height="100%" width="100%" src="./assets/spegni.png">
    </div>
 
-
-
   <div class="grafico"></a>
-    <img height="90%" width="90%" src="./assets/PITTOGRAMMI/TASK/GRAFICO.png">
+  <img height="90%" width="90%" src="./assets/PITTOGRAMMI/TASK/GRAFICO.png">
   </div>
 
     <H1 id="risultatoricordo">  </H1>

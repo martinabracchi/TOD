@@ -19,6 +19,7 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
+  setInterval(manda, 500)
 }
 
 socket.on('sensor', (message) => {
@@ -30,8 +31,6 @@ socket.on('sensor', (message) => {
 function draw() {
   background(0)
 
-  let messaggio1 = '5';
-  socket.emit('saluto', messaggio1);
 
   translate(width / 2, height / 2)
   const micLevel = mic.getLevel();
@@ -76,20 +75,19 @@ function draw() {
 else{
     datagiusta = gg + mm + aaaa;
   }
-  select('#data1').html(datagiusta)
+    select('#data1').html(datagiusta)
 
     if(frameCount > 10){
     console.log(latestData)
     window.open('saluto.html', '_self')
     }
-
-
-
-
 }
 
 
-
+function manda(){
+    let messaggio1 = '7';
+    socket.emit('saluto', messaggio1);
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

@@ -18,7 +18,8 @@ function setup() {
   userStartAudio();
   mic = new p5.AudioIn();
   mic.start();
- speechRec = new p5.SpeechRec('IT', gotSpeech);
+  speechRec = new p5.SpeechRec('IT', gotSpeech);
+  manda()
 
 
 }
@@ -54,8 +55,6 @@ function draw() {
 
   background(0)
 
-  let messaggio1 = '5';
-  socket.emit('saluto', messaggio1);
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0, 1, 0, 300)
 
@@ -80,7 +79,10 @@ function draw() {
 
 }
 
-
+function manda(){
+  let messaggio1 = '5';
+  socket.emit('saluto', messaggio1);
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

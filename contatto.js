@@ -7,13 +7,14 @@ let latestData = "waiting for data";
 var timer = 0;
 var bonus = 0;
 var punteggio;
-
+let d;
 
 
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasBlob');
   setInterval(timerup, 1000)
+ setInterval(manda, 4000)
 }
 
 socket.on('sensor', (message) => {
@@ -21,35 +22,31 @@ socket.on('sensor', (message) => {
 });
 
 
-
-
-
-
-
 function draw() {
-
-  messaggio1 = '7'
-  socket.emit('saluto', messaggio1);
-
   background(0)
   console.log(latestData)
 
-  // console.log(d)
+  if(latestData == 51){
+    d = 55
+  bonus = bonus + 0.4 }
 
-  if(latestData == 57 || latestData == 55 || latestData == 54 || latestData == 59 || latestData == 52 || latestData == 51|| latestData == 53 || latestData == 56 || latestData == 58){
-  bonus = bonus + 0.01 }
+  else if(latestData == 61){
+    d = 75
+  bonus = bonus + 0.8}
 
+  else if(latestData == 41){
+  bonus = bonus + 0.2
+  d = 25 }
+
+  else{
+    d = 0
+  }
 
  translate(width / 2, height / 2)
- var radius = 120;
+ var radius = 80 +d;
 
   beginShape();
-  if(latestData == 51){
-  radius = radius + 20;
-  fill(color("#2c2cff"));
-  }
-  if (latestData == 61) {
-  radius = radius + 50;
+  if(latestData == 51 || latestData == 61 || latestData == 41 ){
   fill(color("#2c2cff"));
   }
   else {
@@ -63,7 +60,7 @@ function draw() {
     var x = r * cos(b);
     var y = r * sin(b);
     vertex(x, y);
-    xoff += 0.2;
+    xoff += 0.1;
   }
   yoff += 0.005;
   endShape();
@@ -80,23 +77,27 @@ function draw() {
     var x = r * cos(a);
     var y = r * sin(a);
     vertex(x, y);
-    xoff += 0.2;
+    xoff += 0.1;
   }
   yoff += 0.005;
   endShape();
 
 
   if(timer<60){
-  punteggio = timer/2 + bonus;}
+  punteggio = timer + bonus;}
   if(timer> 60 && timer > 20){
-    punteggio = timer/2 - bonus
+    punteggio = timer - bonus
+  }
+
+  if(timer> 150 || punteggio > 150){
+    punteggio = 150;
   }
 
 
   console.log("PUNTEGGIO: " + floor(punteggio))
   console.log("BONUS: " + bonus)
 
-  if (frameCount > 300) {
+  if (frameCount > 150) {
     document.getElementById("pictotask").style.display = "none"
     document.getElementById("picto1").style.display = "none"
     document.getElementById("home").style.display = "none"
@@ -110,13 +111,17 @@ function draw() {
   }
 }
 
+function manda(){
+  messaggio1 = '7'
+  socket.emit('saluto', messaggio1);
+}
+
 function timerup(){
   timer = timer + 1;
 }
 
 function aumento(){
   bouns = bonus + 0.1;
-
 }
 
 

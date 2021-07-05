@@ -17,9 +17,7 @@ function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasBlob');
 
-  userStartAudio();
-  mic = new p5.AudioIn();
-  mic.start();
+
 
 
 }
@@ -38,11 +36,8 @@ function draw() {
 // console.log(latestData)
 
   translate(width / 2, height / 2)
-  const micLevel = mic.getLevel();
-  var d = map(micLevel, 0,1, 10,200)
-  // console.log(d)
 
-  var radius = d+100;
+  var radius = 100;
 
 
   beginShape();
@@ -63,7 +58,7 @@ function draw() {
 
 
   beginShape();
-    var d = map(micLevel, 0,1, 10,500)
+  
   fill(color('#2c2cff'));
   noStroke()
   var xoff = 0;

@@ -8,13 +8,28 @@ const socket = io();
 let latestData = "waiting for data";
 let ycontatto;
 let colorcontatto;
+let risultatocontatto;
 
 
 
 function setup() {
+
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasFeedback');
   angleMode(DEGREES);
+  
+  risultatocontatto = getItem('risultatocontatto')
+  ycontatto = floor(map(risultatocontatto,0,100,0,200 ))
+  select('#risultatocontatto').html(risultatocontatto + '/100')
+  if(risultatocontatto>20 && risultatocontatto <101){
+    colorcontatto = "#2c2cff"
+    messaggio1 = '5';
+    socket.emit('saluto', messaggio1);
+  }
+  else{colorcontatto = 'red'
+  messaggio1 = '4';
+  socket.emit('saluto', messaggio1);}
+  manda();
 
 
 
@@ -28,27 +43,29 @@ socket.on('sensor', (message) => {
 
 function draw() {
 
-let risultatocontatto = getItem('risultatocontatto')
 
-risultatocontatto = getItem('risultatocontatto')
-ycontatto = floor(map(risultatocontatto,0,100,0,200 ))
-select('#risultatocontatto').html(risultatocontatto + '/100')
-if(risultatocontatto>20 && risultatocontatto <101){
-  colorcontatto = "#2c2cff"
-}
-else{colorcontatto = 'red'}
 
   er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, colorcontatto, width/40,ycontatto);
 
   er4.transmit();
   select('#risultatocontatto').html(risultatocontatto + '/100')
 
-  if(frameCount > '300'){
+  if(frameCount > '170'){
     let risultatocontatto = getItem('risultatocontatto')
     storeItem('risultatocontatto' ,risultatocontatto)
     window.open('home.html', '_self')
 
   }
+}
+
+function manda(){
+  if(risultatocontatto>20 && risultatocontatto <101){
+    messaggio1 = '5';
+    socket.emit('saluto', messaggio1);
+  }
+  else{
+  messaggio1 = '4';
+  socket.emit('saluto', messaggio1);}
 }
 
 class Egg {

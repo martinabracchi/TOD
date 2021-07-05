@@ -19,6 +19,7 @@ function setup() {
   mic = new p5.AudioIn();
   mic.start();
  speechRec = new p5.SpeechRec('IT', gotSpeech);
+  setInterval(manda, 1000)
 
 
 }
@@ -78,7 +79,10 @@ function draw() {
 
 }
 
-
+function manda(){
+  let messaggio1 = '4';
+  socket.emit('saluto', messaggio1);
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

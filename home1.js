@@ -1,9 +1,9 @@
+
+// initialize socket variable on client
+const socket = io();
 let er1, er3, er4;
 
 var yoff = 0.0;
-// initialize socket variable on client
-const socket = io();
-
 
 // let serial;
 let latestData = "waiting for data";
@@ -16,70 +16,53 @@ var colorcontatto;
 var colorconversazione;
 
 var risultatoricordo = 0;
-var risultatocontatto = 50;
+var risultatocontatto = 0 ;
 var risultatoconversazione = 0;
 var rosso = false;
-let messaggio1 = '5'
+let messaggio1 ;
 
-
-function setup() {
-  var cnv = createCanvas(windowWidth, windowHeight);
-  cnv.id('canvasFeedback');
-  angleMode(DEGREES);
-  setTimeout(mostra, 3000)
-
-}
 
 socket.on('sensor', (message) => {
   latestData = message
 });
 
+function setup() {
+  var cnv = createCanvas(windowWidth, windowHeight);
+  cnv.id('canvasFeedback');
+  angleMode(DEGREES);
+
+  risultatoconversazione = getItem('risultatoconversazione')
+  yconversazione = map(risultatoconversazione,0,100,0,200 )
+  select('#risultatoconversazione').html(risultatoconversazione + '/100')
+  if(risultatoconversazione>20 && risultatoconversazione <101){
+    colorconversazione = "#2c2cff"
+  }
+  else{colorconversazione = 'red'}
+
+
+  risultatoricordo = getItem('risultatoricordo')
+  yricordo = floor(map(risultatoricordo,0,100,0,200 ))
+  select('#risultatoricordo').html(risultatoricordo + '/100')
+  if(risultatoricordo>20 && risultatoricordo <101){
+    colorricordo = "#2c2cff"
+  }
+  else{colorricordo = 'red'}
+
+
+  risultatocontatto = getItem('risultatocontatto')
+  ycontatto = map(risultatocontatto,0,100,0,200 )
+  select('#risultatocontatto').html(risultatocontatto + '/100')
+  if(risultatocontatto>20 && risultatocontatto <101){
+    colorcontatto = "#2c2cff"
+  }
+  else{colorcontatto = 'red'}
+
+  manda()
+  setTimeout(mostra, 3000)
+}
 
 function draw() {
-
-socket.emit('saluto', messaggio1);
-
-risultatoricordo = getItem('risultatoricordo')
-yricordo = floor(map(risultatoricordo,0,100,0,200 ))
-select('#risultatoricordo').html(risultatoricordo + '/100')
-if(risultatoricordo>20 && risultatoricordo <101){
-  colorricordo = "#2c2cff"
-}
-else{colorricordo = 'red'}
-
-var risultatocontatto = getItem('risultatocontatto')
-ycontatto = map(risultatocontatto,0,100,0,200 )
-select('#risultatocontatto').html(risultatocontatto + '/100')
-if(risultatocontatto>30 && risultatocontatto <101){
-  colorcontatto = "#2c2cff"
-}
-else{colorcontatto = 'red'}
-//
-var risultatoconversazione = getItem('risultatoconversazione')
-yconversazione = map(risultatoconversazione,0,100,0,200 )
-select('#risultatoconversazione').html(risultatoconversazione + '/100')
-if(risultatoconversazione>30 && risultatoconversazione <101){
-  colorconversazione = "#2c2cff"
-}
-else{colorconversazione = 'red'}
-
-
-
-  if(colorconversazione == 'red' || colorricordo == 'red' || colorcontatto == 'red' ){
-     messaggio1 = '4';
-   socket.emit('saluto', messaggio1);}
-
-   if(colorconversazione == 'red' && colorricordo == 'red' && colorcontatto == 'red' ){
-      messaggio1 = '4';
-    socket.emit('saluto', messaggio1);}
-
-
- if(colorconversazione == '#2c2cff' && colorricordo == '#2c2cff' && colorcontatto == '#2c2cff' ){
-    messaggio1 = '5';
-    socket.emit('saluto', messaggio1);}
-
-
-
+console.log(latestData);
 
 er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, colorricordo, width/40, yricordo);
 er3 = new EggRing(width*0.49, height*0.58+100, 300, 300, colorconversazione, width/40, yconversazione);
@@ -127,11 +110,43 @@ er4 = new EggRing(width*0.49, height*0.3+100, 60, 300, colorcontatto, width/40,y
       select('#data').html(datagiusta)
 }
 
+function manda(){
+
+  socket.emit('saluto', messaggio1);
+
+  if(colorconversazione == 'red' || colorricordo == 'red' || colorcontatto == 'red' ){
+    if (colorconversazione == 'red' && colorricordo == 'red' && colorcontatto == 'red' ){
+      messaggio1 = '4';
+      socket.emit('saluto', messaggio1);}
+  else {
+    messaggio1 = '7';
+    socket.emit('saluto', messaggio1);}
+}
+
+ if(colorconversazione == '#2c2cff' && colorricordo == '#2c2cff' && colorcontatto == '#2c2cff' ){
+   messaggio1 = '5';
+   socket.emit('saluto', messaggio1);}
+
+}
 
 function mouseClicked(){
   document.getElementById("risultatoricordo").style.display = "block"
   document.getElementById("risultatocontatto").style.display = "block"
   document.getElementById("risultatoconversazione").style.display = "block"
+
+  if(colorconversazione == 'red' || colorricordo == 'red' || colorcontatto == 'red' ){
+    if (colorconversazione == 'red' && colorricordo == 'red' && colorcontatto == 'red' ){
+      messaggio1 = '4';
+      socket.emit('saluto', messaggio1);}
+  else {
+    messaggio1 = '7';
+    socket.emit('saluto', messaggio1);}
+}
+
+ if(colorconversazione == '#2c2cff' && colorricordo == '#2c2cff' && colorcontatto == '#2c2cff' ){
+   messaggio1 = '5';
+   socket.emit('saluto', messaggio1);}
+
   setTimeout(mostra, 3000)
 }
 

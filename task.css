@@ -1,0 +1,109 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./assets/Whyte-Book.ttf);
+}
+
+#myCanvas {
+  width: 100vw;
+  height: 100vh;
+  border: 1px black solid;
+  background-color: #000000;
+  /* background: transparent; */
+  position: absolute;
+  z-index: -10;
+}
+
+#canvasBlob {
+  width: 100vw;
+  height: 100vh;
+  border: 10px black solid;
+  position: absolute;
+  z-index: 10;
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+  right: 0
+}
+
+
+#posizione {
+  color: #ffffff;
+  z-index: 11;
+  display: block;
+  font-size: 4vh;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  position: absolute;
+  right: 4vw;
+  bottom:2vw;
+font-family: myFirstFont;
+}
+#home {
+  color: #ffffff;
+  z-index: 11;
+  display: block;
+  font-size: 4vh;
+  /* margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+  font-family: myFirstFont;
+  position: absolute;
+  left: 4vw;
+  bottom:1vw;
+}
+
+.divistru{
+  width: 500px;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 50%;
+  margin-right: 50%;
+  z-index: 850;
+}
+
+
+#istruzione {
+  color: #ffffff;
+  z-index: 50;
+  text-align: center;
+  position: relative;
+  right: 50%;
+  margin-bottom: 18%;
+  font-size: 6vh;
+  font-family: myFirstFont;
+}
+
+#picto1{
+  height: 11vh;
+  width: 11vh;
+  position: absolute;
+  z-index: 12;
+  left: 4vw;
+  bottom: 5vw;
+}
+
+
+
+#pictotask {
+  height: auto;
+  width: 150px;
+  position: absolute;
+  right: 50%;
+  top: 45%;
+  margin-right: -75px;
+  z-index: 30;
+}
+
+
+
+#click1{
+  height: 11vh;
+  width: 11vh;
+  position: absolute;
+  z-index: 13;
+  left: 4vw;
+  bottom: 4vw;
+
+}

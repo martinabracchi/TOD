@@ -2,13 +2,16 @@
 <html>
 
 <head>
+  <link rel='stylesheet' href='home.css'>
   <link rel='stylesheet' href='attivita.css'>
+
   <meta charset="utf-8">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
   <style>
     body {
       padding: 0;
       margin: 0;
+      overflow: hidden;
     }
   </style>
   <canvas id="myCanvas" width="2400" height="1080"></canvas>
@@ -16,13 +19,12 @@
 
   </canvas>
   <script src="p5.min.js"></script>
-  <script src="p5.sound.min.js"></script>
 </head>
 
 <body>
   <H1 id="nome" class="classenome"> DIEGO ARMANDO</H1>
-  <H1 id="data" class="classedata"> 22 . 12 . 2020</H1>
-  <H1 id="posizione" classe="classeposizione"> ATTIVITA </H1>
+  <H1 id="data" class="classedata"> 01 . 02 . 2021</H1>
+  <H1 id="posizione" classe="classeposizione"> ATTIVITÀ </H1>
 
   <H2 id="home" class="classehome"> Home </H2>
   <H2 id="nucleo" class="classenucleo"> Nucleo </H2>
@@ -44,7 +46,6 @@
      <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/ATTIVITA.png">
    </div>
 
-
   </div>
   <div id="avanti">
     <input type="image" onclick="plusDivs(1)" src="./assets/avanti.png" width="150px" heigt="150px">
@@ -53,85 +54,95 @@
     <input type="image" onclick="plusDivs(-1)" src="./assets/indietro.png"width="150px" heigt="150px">
   </div>
 
-  <div id="cerchi"> <img width="800px" height="800px"src="./assets/cerchi.png"></div>
+  <!-- <div id="cerchi"> <img width="800px" height="800px"src="./assets/cerchi.png"></div>
+<div class="punti" id="divpunti">30/100</div> -->
 
-  <div class="myText" id="divdatagiusta" > <H1 id ="datagiusta" >22 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >12 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >13 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >14 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >15 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >16 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >17 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >18 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >19 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >20 . 12</H1></div>
-  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >21 . 12</H1></div>
+<!-- <div class="grafico"></a>
+   <img height="90%" width="90%" src="./assets/PITTOGRAMMI/TASK/GRAFICO.png">
+ </div> -->
 
-  <div class="myTextsx" id="divdatasx" > <H1 id ="datagiustapiccola" >22 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >12 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >13 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >14 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >15 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >16 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >17 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >18 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >19 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >20 . 12</H1></div>
-  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >21 . 12</H1></div>
+<H1 id="risultatoricordo">80/100</H1>
+  <H1 id="risultatocontatto">120/100</H1>
+    <H1 id="risultatoconversazione">100/100 </H1>
+
+
+  <div class="myText" id="divdatagiusta" > <H1 id ="datagiusta">01 . 02</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >22 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >23 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >24 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >25 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >26 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >27 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >28 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >29 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >30 . 01</H1></div>
+  <div class="myText"id="divdatagiusta" > <H1 id ="datagiusta" >31 . 01</H1></div>
+
+  <div class="myTextsx" id="divdatasx" > <H1 id ="datagiustapiccola">01 . 02</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >22 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >23 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >24 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >25 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >26 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >27 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >28 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >29 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >30 . 01</H1></div>
+  <div class="myTextsx"id="divdatasx" > <H1 id ="datagiustapiccola" >31 . 01</H1></div>
   <div id="nerino2"> <img  width =100% height = 100% src="assets/nero.jpg"></div>
 
-  <div class="myTextdx" id="divdatadx" > <H1 id ="datagiustapiccola" >22 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >12 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >13 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >14 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >15 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >16 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >17 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >18 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >19 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >20 . 12</H1></div>
-  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >21 . 12</H1></div>
+  <div class="myTextdx" id="divdatadx" > <H1 id ="datagiustapiccola">01 . 02</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >22 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >23 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >24 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >25 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >26 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >27 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >28 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >29 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >30 . 01</H1></div>
+  <div class="myTextdx"id="divdatadx" > <H1 id ="datagiustapiccola" >31 . 01</H1></div>
 <div id="nerino"> <img  width =100% height = 100% src="assets/nero.jpg"></div>
 
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/1.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/2.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/3.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/4.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/5.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/6.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/7.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/8.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/9.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/10.png">
-<img class="mySlides" id= "attività" width="800px" height="800px"src="assets/attivita/11.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/1.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/2.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/3.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/4.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/5.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/6.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/7.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/8.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/9.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/10.png">
+<img class="mySlides" id= "attivita0" width="35%" height="auto"src="assets/attivita/12.png">
 
 
 
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/1.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/2.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/3.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/4.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/5.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/6.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/7.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/8.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/9.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/10.png">
-<img class="mySlidesdx" id= "attività1" width="400px" height="400px"src="assets/attivita/11.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/1.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/2.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/3.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/4.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/5.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/6.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/7.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/8.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/9.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/10.png">
+<img class="mySlidesdx" id= "attivita1" width="15%" height="auto"src="assets/attivita/12.png">
 <img id = 'nero' width ='500px' height = '400px' src="assets/nero.jpg">
 
 
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/1.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/2.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/3.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/4.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/5.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/6.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/7.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/8.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/9.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/10.png">
-<img class="mySlidessx" id= "attività2" width="400px" height="400px"src="assets/attivita/11.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/1.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/2.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/3.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/4.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/5.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/6.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/7.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/8.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/9.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/10.png">
+<img class="mySlidessx" id= "attivita2" width="15%" height="auto"src="assets/attivita/12.png">
 <img id = 'nero2' width ='500px' height = '400px' src="assets/nero.jpg">
 
   <script>
@@ -167,6 +178,9 @@ showTextsx(textIndexsx);
     var z = document.getElementById('nero2');
     var u = document.getElementById('nerino');
     var m = document.getElementById('nerino2');
+    var ricordo = document.getElementById('risultatoricordo');
+    var contatto = document.getElementById('risultatocontatto');
+    var conversazione = document.getElementById('risultatoconversazione')
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
@@ -188,6 +202,58 @@ showTextsx(textIndexsx);
       z.style.display = 'none'
       m.style.display = 'none'
     }
+
+if(slideIndex==11){
+ricordo.innerHTML= "100/100"
+contatto.innerHTML="20/100"
+conversazione.innerHTML="80/100"
+}
+else if (slideIndex==10){
+  ricordo.innerHTML= "20/100"
+  contatto.innerHTML="10/100"
+  conversazione.innerHTML="22/100"
+}
+else if (slideIndex==9){
+  ricordo.innerHTML= "60/100"
+  contatto.innerHTML="44/100"
+  conversazione.innerHTML="10/100"
+}
+else if (slideIndex==8){
+  ricordo.innerHTML= "85/100"
+  contatto.innerHTML="76/100"
+  conversazione.innerHTML="83/100"
+}
+else if (slideIndex==7){
+  ricordo.innerHTML= "109/100"
+  contatto.innerHTML="113/100"
+  conversazione.innerHTML="57/100"
+}
+else if (slideIndex==6){
+  ricordo.innerHTML= "127/100"
+  contatto.innerHTML="118/100"
+  conversazione.innerHTML="110/100"
+}
+else if (slideIndex==5){
+  ricordo.innerHTML= "19/100"
+  contatto.innerHTML="82/100"
+  conversazione.innerHTML="23/100"
+}
+else if (slideIndex==4){
+  ricordo.innerHTML= "86/100"
+  contatto.innerHTML="97/100"
+  conversazione.innerHTML="24/100"
+}
+else if (slideIndex==3){
+  ricordo.innerHTML= "73/100"
+  contatto.innerHTML="82/100"
+  conversazione.innerHTML="74/100"
+}
+else if (slideIndex==2){
+  ricordo.innerHTML= "124/100"
+  contatto.innerHTML="10/100"
+  conversazione.innerHTML="65/100"
+}
+
 
 
 }

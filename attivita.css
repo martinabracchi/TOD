@@ -1,166 +1,21 @@
-@font-face {
-  font-family: myFirstFont;
-  src: url(./assets/Whyte-Book.ttf);
-}
-
-#myCanvas {
-  width: 100vw;
-  height: 100vh;
-  border: 1px black solid;
-  background-color: #000000;
-  /* background: transparent; */
-  position: absolute;
-  z-index: -10;
-}
-
-#canvasFeedback {
-  width: 100vw;
-  height: 100vh;
-  border: 10px black solid;
-  position: absolute;
-  z-index: 10;
-  filter: blur(60px);
-  -webkit-filter: blur(60px);
-  right: 0
-}
-
-#nome {
-  color: #ffffff;
-  position: absolute;
-  z-index: 10;
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  left: 2em;
-  top: 1em;
-  font-family: myFirstFont;
-}
-
-#data {
-  color: #ffffff;
-  z-index: 10;
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  position: absolute;
-  right: 2em;
-  top: 1em;
-  font-family: myFirstFont;
-}
-
-#posizione {
-  color: #ffffff;
-  z-index: 10;
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  position: absolute;
-  right: 2em;
-  bottom: 1em;
-  font-family: myFirstFont;
-}
-
-#home {
-  color: #ffffff;
-  z-index: 10;
-  display: block;
-  font-size: 2.5vh;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-family: myFirstFont;
-  position: absolute;
-  left: 2vw;
-  bottom:1vw;
-
-}
-
-#nucleo {
-  color: #ffffff;
-  z-index: 10;
-  display: block;
-  font-size: 2.5vh;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  position: absolute;
-  left: 8vw;
-  bottom:1vw;
-  font-family: myFirstFont;
-}
-
-#attivita {
-  color: #ffffff;
-  z-index: 10;
-  display: block;
-  font-size: 2.5vh;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  position: absolute;
-  left: 14vw;
-  bottom:1vw;
-  font-family: myFirstFont;
-
-}
-
-
-#picto1{
-  height: 8vh;
-  width: 8vh;
-  position: absolute;
-  z-index: 10;
-  left: 2vw;
-  bottom: 4vw;
-}
-
-#picto2{
-  height: 8vh;
-  width: 8vh;
-  position: absolute;
-  z-index: 10;
-  left: 8vw;
-  bottom: 4vw;
-}
-
-#picto3{
-  height: 8vh;
-  width: 8vh;
-  position: absolute;
-  z-index: 10;
-  left: 14vw;
-  bottom: 4vw;
-}
-
-
-#attività {
-  left: 33vw;
-  top: 15vh;
+#attivita0 {
+  left: 50%;
+  margin-left: -17.5%;
+  top: 40%;
+  margin-top: -400px;
   position: absolute;
 
 }
 
-#attività1 {
-  left: 70vw;
-  top: 25vh;
+#attivita1 {
+  left: 65vw;
+  top: 34vh;
   position: absolute;
 }
 
-#attività2 {
-  left: 15vw;
-  top: 25vh;
+#attivita2 {
+  right: 65vw;
+  top: 34vh;
   position: absolute;
 }
 
@@ -173,12 +28,16 @@
   z-index: 10;
 }
 
+
+
+
+
 #indietro {
   position: absolute;
   width: 300px;
   height: 300px;
   top: 45vh;
-  left: 20vw;
+  right: 64vw;
   z-index: 10;
 }
 
@@ -186,9 +45,9 @@
   position: absolute;
   width: 500px;
   height: 50px;
-  margin-right:50%;
-  margin-left: 50%;
-  bottom: 0;
+  right: 50%;
+  margin-right:-250px;
+  bottom: 2vw;
 }
 
 #divdatasx{
@@ -197,7 +56,7 @@
   height: 50px;
   margin-right:50%;
   margin-left: 40%;
-  bottom: 0;
+  bottom: 2vw;
 }
 
 #divdatadx{
@@ -206,7 +65,7 @@
   height: 50px;
   right:19%;
   margin-left: 50%;
-  bottom: 0;
+  bottom: 2vw;
 }
 
 #datagiustapiccola{
@@ -214,7 +73,7 @@ color: #ffffff;
 z-index: 10;
 font-size: 2em;
 right: 50%;
-bottom: 2em;
+bottom: 2vw;
 position: relative;
 font-family: myFirstFont;
 text-align: center;
@@ -224,11 +83,13 @@ opacity: 0.5;
 #datagiusta{
 color: #ffffff;
 z-index: 10;
+width: 500px;
 display: block;
 font-size: 2em;
 right: 50%;
-bottom: 2em;
-position: relative;
+margin-right: -250px;
+bottom: 0vw;
+position: absolute;
 font-family: myFirstFont;
 text-align: center;
 }
@@ -242,14 +103,14 @@ text-align: center;
 
 
 #nero{
-  left: 70vw;
-  top: 25vh;
+  left: 65vw;
+  top: 34vh;
   position: absolute;
   z-index: 100;
 }
 #nero2{
   left: 15vw;
-  top: 25vh;
+  top: 34vh;
   position: absolute;
   z-index: 100;
 }
@@ -257,51 +118,65 @@ text-align: center;
 #nerino{
   position: absolute;
   width: 500px;
-  height: 50px;
+  height: 100px;
   right:24%;
   margin-left: 50%;
-  bottom:5%;
+  bottom: 2.5vw;
 
   z-index: 100;
 }
 
 #nerino2{
   position: absolute;
-  width: 500px;
-  height: 50px;
-  margin-left: 24%;
-  bottom: 5%;
+  width: 200px;
+  height: 150px;
+  margin-left: 35%;
+  bottom: 2.5vw;
   z-index: 100;
 }
 
-#click1{
-  display: block;
-  height: 14vh;
-  width: 9vh;
-  position: absolute;
-  z-index: 20;
-  left: 2vw;
-  bottom: 3vh;
 
+#risultatoricordo{
+  width: 100px;
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  font-size: 3vh;
+  right:50%;
+  margin-right: -50px;
+  top:7%;
+  font-family: myFirstFont;
 }
 
-#click2{
-  display: block;
-  height: 14vh;
-  width: 9vh;
+#risultatocontatto{
+  color: #ffffff;
+  z-index: 10;
   position: absolute;
-  z-index: 70;
-  left: 8vw;
-  bottom: 3vh;
-
+  display: block;
+  font-size: 3vh;
+  left: 28%;
+  top:72%;
+  font-family: myFirstFont;
 }
 
-#click3{
-  display: block;
-  height: 14vh;
-  width: 9vh;
+#risultatoconversazione{
+  color: #ffffff;
+  z-index: 10;
   position: absolute;
-  z-index: 20;
-  left: 14vw;
-  bottom: 3vh;
+  display: block;
+  font-size: 3vh;
+  right: 28%;
+  top:72%;
+  font-family: myFirstFont;
+}
+.grafico{
+  position: absolute;
+  display:block;
+  left: 50%;
+  top: 15%;
+  margin-left: -344px;
+  height: 800px;
+  width: 840px;
+  z-index: 80;
 }

@@ -8,16 +8,24 @@ const socket = io();
 let latestData = "waiting for data";
 let yricordo;
 let colorricordo;
-
+let risultatoricordo;
 
 
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('canvasFeedback');
   angleMode(DEGREES);
+  
+  risultatoricordo = getItem('risultatoricordo')
+  yricordo = floor(map(risultatoricordo,0,100,0,200 ))
+  if(risultatoricordo>20 && risultatoricordo <101){
+    colorricordo = "#2c2cff"}
+    else{
+    colorricordo = 'red'
+    }
+  select('#risultatoricordo').html(risultatoricordo + '%')
 
-
-
+  manda();
 
 }
 
@@ -28,27 +36,28 @@ socket.on('sensor', (message) => {
 
 function draw() {
 
-let risultatoricordo = getItem('risultatoricordo')
-
-risultatoricordo = getItem('risultatoricordo')
-yricordo = floor(map(risultatoricordo,0,100,0,200 ))
-select('#risultatoricordo').html(risultatoricordo + '%')
-if(risultatoricordo>20 && risultatoricordo <101){
-  colorricordo = "#2c2cff"
-}
-else{colorricordo = 'red'}
-
 er2 = new EggRing(width*0.6, height*0.45+100, 180, 300, colorricordo, width/40, yricordo);
 
   er2.transmit();
   select('#risultatoricordo').html(risultatoricordo + '/100')
 
-  if(frameCount > '300'){
+  if(frameCount > '170'){
     let risultatoricordo = getItem('risultatoricordo')
     storeItem('risultatoricordo' ,risultatoricordo)
     window.open('home.html', '_self')
 
   }
+}
+
+function manda(){
+  if(risultatoricordo>20 && risultatoricordo <101){
+    colorricordo = "#2c2cff"
+    messaggio1 = '5';
+    socket.emit('saluto', messaggio1);
+  }
+  else{colorricordo = 'red'
+  messaggio1 = '4';
+  socket.emit('saluto', messaggio1);}
 }
 
 class Egg {

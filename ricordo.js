@@ -25,7 +25,9 @@ function setup() {
   mic = new p5.AudioIn();
   mic.start();
   setInterval(timerup, 1000)
-  setInterval(riduzione, 2000)
+
+  manda()
+
 }
 
 socket.on('sensor', (message) => {
@@ -35,21 +37,14 @@ socket.on('sensor', (message) => {
 
 
 function draw() {
-
-  messaggio1 = '7'
-  socket.emit('saluto', messaggio1);
-
   background(0)
-
   translate(width / 2, height / 2)
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0,1, 10,200)
-
-  if(d>20){
-    messaggio1 = '4';
-    socket.emit('saluto', messaggio1);
+  if(latestData === 4 || d>15){
+  setTimeout(riduzione, 1000)
   }
-  // console.log(d)
+
 
   var radius = d+100;
 
@@ -73,9 +68,8 @@ function draw() {
 
   beginShape();
     var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
+  if(d>15){
     fill(color('#ff0000'));
-    setInterval(riduzione, 2000)
   }
   else{
   fill(color('#2c2cff'));}
@@ -95,21 +89,21 @@ function draw() {
 
 
 if(timer<40){
-punteggio = timer - malus;}
+punteggio = timer*2 - malus;}
 if(timer>40){
-  punteggio = timer + malus
+  punteggio = timer*2 + malus
 }
 
 if(punteggio < 0){
-  punteggio = 0
+  punteggio = 5
 }
 
-if(timer> 200){
+if(timer> 150 || punteggio > 150){
   punteggio = 150;
 }
-console.log("PUNTEGGIO: " + punteggio)
+console.log("PUNTEGGIO: " + floor(punteggio))
 
-if(frameCount>300){
+if(frameCount>150){
 
 document.getElementById("pictotask").style.display = "none"
 document.getElementById("picto1").style.display = "none"
@@ -118,13 +112,17 @@ document.getElementById("istruzione").style.display = "none"
 
   if(latestData === 2){
   console.log(latestData);
-  storeItem('risultatoricordo', punteggio)
+  storeItem('risultatoricordo', floor(punteggio))
   window.open("elaborazioneric.html", '_self')
   }
 }
 
 }
 
+function manda(){
+    messaggio1 = '7'
+    socket.emit('saluto', messaggio1);
+}
 
 function timerup(){
   timer = timer + 1
@@ -132,12 +130,11 @@ function timerup(){
 }
 
 function riduzione(){
-
   const micLevel = mic.getLevel();
   var d = map(micLevel, 0,1, 10,500)
-  if(latestData === 4 || d>15){
-  malus = malus+0.01}
-}
+  malus = malus+0.01
+console.log('MALUS: ' + malus)}
+
 
 
 

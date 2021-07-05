@@ -2,27 +2,29 @@
 <html>
 
 <head>
-  <link rel='stylesheet' href='nucleo.css'>
+  <link rel='stylesheet' href='home.css'>
   <meta charset="utf-8">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
   <style>
     body {
       padding: 0;
       margin: 0;
+      overflow: hidden;
     }
   </style>
   <canvas id="myCanvas" width="2400" height="1080"></canvas>
-  <canvas id="canvasBlob">
+  <canvas id="canvasFeedback">
 
   </canvas>
+  <script src="/socket.io/socket.io.js"></script>
   <script src="p5.min.js"></script>
-  <script src="p5.sound.min.js"></script>
+  <script src="nucleo.js"></script>
 
 </head>
 
 <body>
   <H1 id="nome" class="classenome"> DIEGO ARMANDO</H1>
-  <H1 id="data" class="classedata"> 22 . 12 . 2020 </H1>
+  <H1 id="data" class="classedata"> 22 . 12 . 2020</H1>
   <H1 id="posizione" classe="classeposizione"> NUCLEO </H1>
 
   <H2 id="home" class="classehome"> Home </H2>
@@ -35,7 +37,7 @@
  <img height="100%" width="100%" src="./assets/PITTOGRAMMI/VUOTI/HOME.png">
   </div>
 
- <a id = "click2" href="nucleos.html">
+ <a id = "click2" href="nucleo.html">
   <div id="picto2" class="classepicto2"></a>
     <img height="100%" width="100%" src="./assets/PITTOGRAMMI/PIENI/NUCLEO.png">
   </div>
@@ -49,8 +51,8 @@
   <tr>
     <td align="center" valign="center">
    <div id="nucleo1" onclick="window.open('mariangela.html', '_self')">
-      <div class="name" > Mariangela </div>
-     <img height="100%" width="110%" src="./assets/nucleo/1.png">
+      <div class="name" >Mariangela</div>
+     <img height="100%" width="100%" src="./assets/nucleo/1.png">
 
    </div>
  </td>
@@ -58,15 +60,15 @@
 
   <td align="center" valign="center">
    <div id="nucleo2"  onclick="window.open('stefano.html', '_self')">
-  <div class="name" >Stefano </div>
-     <img height="100%" width="110%" src="./assets/nucleo/3.png">
+  <div class="name" >Stefano</div>
+    <img height="100%" width="100%" src="./assets/nucleo/3.png">
    </div>
 </td>
 
   <td align="center" valign="center">
    <div id="nucleo3" onclick="window.open('mamma.html', '_self')">
-          <div class="name2" > Mamma </div>
-     <img height="100%" width="110%" src="./assets/nucleo/4.png">
+      <div class="name2" >Mamma</div>
+     <img height="100%" width="100%" src="./assets/nucleo/4.png">
    </div>
  </td>
 </tr>

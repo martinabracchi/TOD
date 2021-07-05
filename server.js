@@ -9,7 +9,7 @@ const path = require('path');
 const SerialPort = require('serialport');
 // Open up connection with Arduino board
 const serial = new SerialPort('COM6', {
-        baudRate: 115200
+        baudRate: 500000
     }, function() {
         console.log('Ready to communicate with Arduino on serial port');
 })
